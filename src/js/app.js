@@ -58,6 +58,7 @@ import "./components/scroll/scroll-sidebar-booking";
 import "./components/mousemove/card-cursor";
 
 import "./components/date-input.js";
-import "./components/artemMainJS/artem-main.js"
-import 'normalize.css'
+import "./components/artemMainJS/artem-main.js";
+import 'normalize.css';
 import '../styles//main.scss';
+import '../styles/artem-main.scss';
