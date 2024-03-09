@@ -1,4 +1,6 @@
-Start project: 
+Start project:
+
+npm install
 
 npm run dev
 
