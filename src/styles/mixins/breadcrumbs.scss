@@ -1,0 +1,28 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  a,
+  span {
+    text-transform: uppercase;
+    color: $green-200;
+    @include sans-sm-medium;
+    @include screen(tablet) {
+      @include sans-base-medium;
+    }
+  }
+  a {
+    transition:
+      color $transition-default,
+      border-color $transition-default;
+    border-bottom: 1px solid $green-200;
+    @include screen(laptop) {
+      &:hover {
+        color: $fathom;
+        border-color: $fathom;
+      }
+    }
+  }
+  span {
+    margin: 0 4px;
+  }
+}

@@ -1,0 +1,6 @@
+.search__button {
+  margin-top: 40px;
+  @include screen(laptop) {
+    display: none;
+  }
+}

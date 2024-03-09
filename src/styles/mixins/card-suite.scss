@@ -1,0 +1,123 @@
+.card-suite {
+  display: flex;
+  flex-direction: column;
+  &__wrapper {
+    height: 100%;
+  }
+  .splide {
+    &__slide {
+      min-height: 290px;
+      height: 290px;
+      @include screen(laptop) {
+        min-height: 456px;
+        height: 456px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__pagination {
+      bottom: 20px;
+      @include screen(laptop) {
+        bottom: 27px;
+        left: auto;
+        right: 10px;
+      }
+      li {
+        button {
+          background-color: $white;
+          &.is-active {
+            &:before {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-booking {
+    .splide {
+      &__slide {
+        min-height: 276px;
+        height: 276px;
+      }
+    }
+  }
+  &-disabled {
+    user-select: none;
+    opacity: 0.5;
+    pointer-events: none;
+    .splide {
+      &__pagination {
+        li {
+          button {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+    .button {
+      display: none;
+    }
+  }
+  &__content {
+    padding-top: 32px;
+    display: grid;
+    @include screen(tablet) {
+      grid-template-rows: 277px 1fr;
+    }
+  }
+  &-ship {
+    .splide {
+      &__slide {
+        min-height: 276px;
+        height: 276px;
+        @include screen(laptop) {
+          min-height: 456px;
+          height: 456px;
+        }
+      }
+    }
+    .card-suite__content {
+      display: block;
+    }
+  }
+  &__inner {
+    height: 100%;
+  }
+  &__title {
+    @include sans-xl-medium;
+    color: $fathom;
+  }
+  &__options {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    svg {
+      stroke: $untold-400;
+      fill: $untold-400;
+    }
+    span {
+      color: $green-200;
+      @include sans-sm-medium;
+    }
+  }
+  &__description {
+    color: $fathom;
+    @include line-clamp-6;
+    @include sans-md;
+  }
+  .card {
+    &__footer {
+      margin-top: 20px;
+    }
+  }
+}

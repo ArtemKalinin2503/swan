@@ -1,0 +1,74 @@
+.partnerships {
+  padding-top: 48px;
+  @include screen(laptop) {
+    padding-top: 84px;
+  }
+  &-no-padding {
+    padding-top: 0;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @include screen(tablet) {
+      gap: 80px;
+    }
+    @include screen(laptop) {
+      gap: 124px;
+    }
+    &-sm {
+      gap: 24px;
+      @include screen(laptop) {
+        gap: 80px;
+      }
+    }
+  }
+  &__button {
+    margin-top: 20px;
+    @include screen(laptop) {
+      margin-top: 70px;
+    }
+  }
+  .flip-slider {
+    &__content {
+      position: static;
+      padding-top: 24px;
+      @include screen(laptop) {
+        position: relative;
+        padding-top: 0;
+      }
+    }
+    &__images {
+      order: -1;
+    }
+    &__list {
+      &__item {
+        position: relative;
+        text-align: center;
+        padding: 0 43px;
+        @include sans-base;
+        @include screen(laptop) {
+          text-align: left;
+          padding: 0;
+          @include sans-lg-medium;
+        }
+      }
+    }
+    &__wrapper {
+      padding-top: 110px;
+      position: relative;
+      @include screen(laptop) {
+        position: static;
+        padding-top: 0;
+      }
+      .headline {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        @include screen(laptop) {
+          position: static;
+        }
+      }
+    }
+  }
+}

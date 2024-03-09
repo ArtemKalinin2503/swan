@@ -1,0 +1,77 @@
+.tags {
+  position: relative;
+  margin-top: 40px;
+  &__title {
+    text-transform: uppercase;
+    color: $green-200;
+    @include sans-sm-med;
+    @include screen(laptop) {
+      display: none;
+    }
+  }
+  &__list {
+    display: flex;
+    padding-right: 16px;
+    gap: 8px;
+    flex-wrap: wrap;
+    max-height: 100%;
+    overflow-y: auto;
+    @include screen(laptop) {
+      padding-right: 0;
+    }
+  }
+  &__clear {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: -64px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $fathom;
+    @include sans-sm-med;
+    @include screen(laptop) {
+      display: inline-block;
+    }
+  }
+  &__add {
+    text-transform: uppercase;
+    border-bottom: 1px solid $fathom;
+    position: relative;
+    margin-top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include sans-sm-med;
+    @include screen(laptop) {
+      display: none;
+    }
+  }
+}
+
+.tag {
+  background-color: rgba($shice, 0.3);
+  padding: 8px 16px;
+  border-radius: 100px;
+  transition:
+    color $transition-default,
+    background-color $transition-default;
+  color: $fathom;
+  @include sans-base;
+  @include screen(laptop) {
+    &:hover {
+      background-color: $fathom;
+      color: $white;
+    }
+  }
+  &.active {
+    background-color: $fathom;
+    color: $white;
+  }
+  &.show {
+    display: block;
+  }
+  &.hide {
+    display: none;
+    @include screen(laptop) {
+      display: block;
+    }
+  }
+}

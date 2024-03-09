@@ -1,0 +1,32 @@
+.icon-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  @include screen(tablet) {
+    width: 50%;
+  }
+  @include screen(laptop) {
+    width: auto;
+  }
+  &__icon {
+    width: 112px;
+    height: 112px;
+    background-color: rgba(146, 199, 208, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    margin-bottom: 32px;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 16px;
+    @include sans-lg-medium;
+  }
+  &__text {
+    text-align: center;
+    max-width: 200px;
+  }
+}

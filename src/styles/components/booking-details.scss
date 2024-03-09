@@ -1,0 +1,431 @@
+.booking-details {
+  &__arrow {
+    stroke: $green-200;
+    transition: transform $transition-default;
+  }
+  &__flag {
+    stroke: $green-200;
+    transition: transform $transition-default;
+  }
+  &__subtitle {
+    margin-top: 16px;
+    color: $fathom;
+    @include sans-base-medium;
+    &-mt {
+      margin-top: 60px;
+    }
+  }
+  &__title {
+    color: $fathom;
+    margin-top: 20px;
+    @include chap-xs;
+    &-mt {
+      margin-top: 42px;
+    }
+  }
+  &__input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    grid-column: span 1 / span 1;
+    input {
+      padding: 16px 0;
+      border-bottom: 1px solid $green-200;
+      width: 100%;
+      max-height: 65px;
+      @include sans-md;
+      &[type="date"]::-webkit-inner-spin-button,
+      &[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+      }
+    }
+    .svg__check {
+      stroke: $fathom;
+      position: absolute;
+      right: 0;
+    }
+    &-icon {
+      gap: 10px;
+      input {
+        padding-left: 34px;
+      }
+    }
+    &-big {
+      grid-column: span 3;
+    }
+    &-small {
+      grid-column: span 3;
+      @include screen(tablet) {
+        grid-column: span 1;
+        grid-column-end: 1;
+      }
+    }
+    &-mt {
+      @include screen(tablet) {
+        margin-top: 42px;
+      }
+    }
+    &.active {
+      display: flex;
+    }
+  }
+  &__note {
+    color: $green-200;
+    @include sans-sm-medium;
+  }
+  &__inputs {
+    row-gap: 42px;
+    display: grid;
+    column-gap: 48px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @include screen(tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    &-small {
+      row-gap: 12px;
+    }
+    &-third {
+      @include screen(tablet) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    &-one {
+      @include screen(tablet) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+    }
+    &-mt {
+      margin-top: 18px;
+    }
+    &-basic {
+      margin-top: 42px;
+    }
+    &-grid {
+      .booking-details__input {
+        &:nth-child(1) {
+          order: 1;
+          margin-top: 42px;
+        }
+        &:nth-child(2) {
+          order: 3;
+          @include screen(tablet) {
+            order: 2;
+            margin-top: 42px;
+          }
+        }
+      }
+      .booking-details__note {
+        &:nth-child(3) {
+          order: 2;
+          @include screen(tablet) {
+            order: 3;
+          }
+        }
+        &:nth-child(4) {
+          order: 4;
+          @include screen(tablet) {
+            order: 4;
+          }
+        }
+      }
+    }
+  }
+  &__label {
+    margin-top: 16px;
+    padding-left: 40px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    @include screen(tablet) {
+      margin-top: 42px;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .booking-details__approved {
+      display: flex;
+      position: relative;
+      @include sans-md;
+      @include screen(tablet) {
+        align-items: center;
+      }
+      &:before {
+        content: "";
+        border-radius: 2px;
+        height: 24px;
+        width: 24px;
+        background-color: $white;
+        border: 1px solid $green-200;
+        position: absolute;
+        left: -40px;
+        top: 4px;
+        transition: $transition-default;
+      }
+      &:after {
+        // content: url("./images/check.svg");
+        height: 12px;
+        width: 12px;
+        position: absolute;
+        left: -34px;
+        bottom: 52px;
+        transition: $transition-default;
+        opacity: 0;
+        @include screen(tablet) {
+          top: 0;
+        }
+      }
+      a {
+        position: relative;
+        border-bottom: 1px solid $text;
+        transition:
+          color $transition-default,
+          border-color $transition-default;
+        @include screen(laptop) {
+          &:hover {
+            color: $fathom;
+            border-color: $fathom;
+          }
+        }
+      }
+    }
+    input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 12px;
+      left: 12px;
+      &:checked + .booking-details__approved {
+        &:before {
+          border-color: $fathom;
+          background-color: $fathom;
+        }
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+    @include screen(laptop) {
+      &:hover {
+        span {
+          &:before {
+            border-color: $green-200;
+          }
+        }
+      }
+    }
+  }
+  &__calendar {
+    position: absolute;
+    left: 0;
+    stroke: transparent;
+    fill: $fathom;
+  }
+  .popup {
+    &__input {
+      &-phone {
+        input {
+          padding-left: 58px;
+        }
+      }
+    }
+    &__arrow {
+      stroke: $green-200;
+      transition: transform $transition-default;
+    }
+    &__flag {
+      stroke: $green-200;
+      transition: transform $transition-default;
+    }
+    &__dropdown {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      cursor: pointer;
+      position: absolute;
+      &__container {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        padding: 0 0 8px;
+        background-color: $white;
+        border-radius: 4px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        visibility: hidden;
+        min-width: 200px;
+        width: 100%;
+        max-width: 200px;
+        z-index: -1;
+        &.active {
+          opacity: 1;
+          visibility: visible;
+          z-index: 3;
+        }
+      }
+      &__list {
+        max-height: 144px;
+        width: 100%;
+        overflow-y: auto;
+        transition:
+          opacity $transition-default,
+          visibility $transition-default,
+          z-index $transition-default;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+      &__search {
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+      }
+      input {
+        padding: 0px 0 0 20px;
+        border: none;
+        width: 148px;
+        background-color: $white;
+        @include sans-base;
+      }
+      &__submit {
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          stroke: $fathom;
+        }
+      }
+      &__current {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        &.active {
+          .popup__arrow {
+            transform: rotate(180deg);
+            transition: $transition-default;
+          }
+        }
+      }
+      &__check {
+        opacity: 0;
+        margin-left: 10px;
+        stroke: $fathom;
+        transition: opacity $transition-default;
+      }
+      &__flag {
+        stroke: transparent;
+        max-width: 24px;
+        max-height: 24px;
+      }
+      &__country {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color $transition-default;
+        padding: 6px 20px;
+        span {
+          white-space: nowrap;
+        }
+        @include screen(laptop) {
+          &:hover {
+            background-color: $white-300;
+          }
+        }
+        &.active {
+          background-color: $white-300;
+          .popup__dropdown__check {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__dropdown {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    &__scroll {
+      width: 100%;
+      max-height: 120px;
+      overflow-y: auto;
+      top: 8px;
+      background-color: $white;
+    }
+    &__list {
+      opacity: 0;
+      top: 72px;
+      overflow: hidden;
+      left: 0;
+      z-index: -1;
+      background-color: $white;
+      visibility: hidden;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+      max-height: 136px;
+      min-height: 52px;
+      padding: 8px 0;
+      width: 100%;
+      position: absolute;
+      border-radius: 12px;
+      transition:
+        opacity $transition-default,
+        visibility $transition-default,
+        z-index $transition-default;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 3;
+      }
+    }
+    &__current {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      &.active {
+        .booking-details__arrow {
+          transform: rotate(180deg);
+          transition: $transition-default;
+        }
+      }
+    }
+    &__flag {
+      stroke: transparent;
+      max-width: 24px;
+      max-height: 24px;
+    }
+    &__country {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color $transition-default;
+      padding: 8px;
+      @include screen(laptop) {
+        &:hover {
+          background-color: $white-300;
+        }
+      }
+      &.active {
+        background-color: $white-300;
+      }
+    }
+  }
+}

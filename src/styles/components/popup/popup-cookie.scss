@@ -1,0 +1,141 @@
+.popup-cookie {
+  .popup {
+    &__continer {
+      position: relative;
+      gap: 16px;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      @include screen(tablet) {
+        gap: 45px;
+      }
+    }
+    &__form {
+      height: 100%;
+      position: relative;
+    }
+    &__labels {
+      max-height: calc(100vh - 402px);
+      overflow-y: auto;
+    }
+    &__label {
+      margin-top: 16px;
+      padding-left: 40px;
+      cursor: pointer;
+      position: relative;
+      display: block;
+      @include screen(tablet) {
+        margin-top: 32px;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+      input {
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        &:checked + h3 {
+          &:before {
+            border-color: $fathom;
+            background-color: $fathom;
+          }
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+      h3 {
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: $fathom;
+        font-family: "Chap-Medium";
+        @include chap-xs;
+        &:before {
+          content: "";
+          border-radius: 2px;
+          height: 24px;
+          width: 24px;
+          background-color: transparent;
+          border: 1px solid $green-200;
+          position: absolute;
+          left: -40px;
+          transition: $transition-default;
+        }
+        &:after {
+          // content: url("./images/check.svg");
+          height: 12px;
+          width: 12px;
+          position: absolute;
+          left: -34px;
+          bottom: 14px;
+          transition: $transition-default;
+          opacity: 0;
+        }
+      }
+      @include screen(laptop) {
+        &:hover {
+          h3 {
+            &:before {
+              border-color: $green-200;
+            }
+          }
+        }
+      }
+    }
+    &__text {
+      @include sans-sm;
+    }
+    &__title {
+      text-transform: uppercase;
+      @include chap-sm-xs;
+      @include screen(tablet) {
+        @include chap-base;
+      }
+    }
+    &__policy {
+      @include sans-2xs;
+      @include screen(tablet) {
+        @include sans-sm;
+      }
+      a {
+        border-bottom: 1px solid transparent;
+        font-weight: 500;
+        transition: border-color $transition-default;
+        @include screen(laptop) {
+          &:hover {
+            border-color: $fathom;
+          }
+        }
+      }
+    }
+    &__footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: $white;
+      padding-top: 16px;
+      @include screen(laptop) {
+        padding-top: 0;
+      }
+    }
+    &__buttons {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      @include screen(tablet) {
+        margin-top: 24px;
+        flex-direction: row;
+        gap: 24px;
+      }
+      .button {
+        @include screen(tablet) {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.sidebar-partners {
+  &__block {
+    margin-top: 60px;
+    &:first-child {
+      margin-top: 0;
+    }
+    @include screen(laptop) {
+      margin-top: 120px;
+    }
+  }
+  &__item {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  &__subtitle {
+    text-transform: uppercase;
+    color: $green-200;
+    @include sans-base-medium;
+  }
+  &__link {
+    border-bottom: 1px solid $text;
+    transition:
+      color $transition-default,
+      border-color $transition-default;
+    @include screen(laptop) {
+      &:hover {
+        color: $fathom;
+        border-color: $fathom;
+      }
+    }
+  }
+  &__title {
+    @include chap-xs;
+  }
+}

@@ -1,0 +1,137 @@
+.booking-notification {
+  &__description {
+    margin-top: 28px;
+    @include sans-lg;
+    a {
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: $transition-default;
+      @include screen(laptop) {
+        &:hover {
+          border-bottom: 1px solid $text;
+        }
+      }
+    }
+  }
+  &__row {
+    padding: 24px 0;
+    border-bottom: 1px solid $green-200;
+    @include screen(tablet) {
+      padding: 36px 0;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border: none;
+      align-items: flex-start;
+      padding-top: 0;
+      @include screen(laptop) {
+        padding-top: 36px;
+      }
+    }
+  }
+  &__block {
+    grid-column: span 12;
+    &-mobile {
+      padding-bottom: 24px;
+      padding-top: 24px;
+      border-bottom: 1px solid $green-200;
+      width: 100%;
+      @include screen(laptop) {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+        width: auto;
+      }
+    }
+    @include screen(laptop) {
+      grid-column: span 5;
+    }
+    &-items {
+      grid-column: span 2;
+      @include screen(laptop) {
+        grid-column-start: 3;
+        grid-column-end: 8;
+      }
+    }
+    &-right {
+      display: grid;
+      grid-column: span 12;
+      @include screen(tablet) {
+        gap: 24px;
+      }
+      @include screen(laptop) {
+        gap: 0;
+        grid-column: span 7;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+    }
+  }
+  .booking-review {
+    &__title {
+      margin-top: 56px;
+      margin-bottom: 24px;
+      @include screen(tablet) {
+        margin-top: 48px;
+        margin-bottom: 32px;
+      }
+    }
+    &__wrapper-small {
+      @include screen(laptop) {
+        margin-top: 24px;
+      }
+    }
+    &__card {
+      &-grid {
+        grid-column: span 2;
+      }
+      @include screen(tablet) {
+        flex-wrap: nowrap;
+        min-height: 66px;
+      }
+      &-justify {
+        display: grid;
+        gap: 0;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      &-top {
+        grid-column: span 2;
+        margin-top: 48px;
+        margin-bottom: 24px;
+        @include screen(tablet) {
+          margin-bottom: 0;
+        }
+        @include screen(laptop) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .sidebar {
+    &__heading {
+      text-transform: uppercase;
+      color: $green-200;
+      margin-bottom: 12px;
+      @include sans-base-medium;
+    }
+    &__text {
+      span {
+        @include sans-3xl;
+      }
+    }
+    &__description {
+      padding-top: 24px;
+      @include screen(tablet) {
+        padding-top: 0;
+      }
+      @include screen(laptop) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+      }
+    }
+  }
+}

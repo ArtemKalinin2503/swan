@@ -1,0 +1,22 @@
+.cruise-page {
+  &__partner {
+    .partner-block__content {
+      @include screen(tablet) {
+        padding-top: 40px;
+      }
+      @include screen(laptop) {
+        padding-top: 78px;
+      }
+    }
+  }
+  .flip-slider-transparent {
+    min-height: auto;
+  }
+  .flip-slider__images {
+    order: 2;
+    position: relative;
+    width: auto;
+    height: auto;
+    max-width: auto;
+  }
+}

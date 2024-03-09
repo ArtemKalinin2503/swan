@@ -1,0 +1,66 @@
+.team {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 60px;
+    @include screen(tablet) {
+      flex-direction: row;
+      gap: 128px;
+    }
+    @include screen(tablet) {
+      gap: 256px;
+    }
+  }
+  .member {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &__image {
+      margin-bottom: 32px;
+      img {
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__title {
+      color: $fathom;
+      margin-bottom: 8px;
+      @include chap-xs;
+    }
+    &__phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+      svg {
+        fill: $fathom;
+        stroke: $fathom;
+      }
+      span {
+        color: $fathom;
+        border-bottom: 1px solid transparent;
+        transition: border-color $transition-default;
+        @include sans-base-small;
+      }
+      @include screen(laptop) {
+        &:hover {
+          span {
+            border-color: $fathom;
+          }
+        }
+      }
+    }
+    &__email {
+      color: $fathom;
+      border-bottom: 1px solid $fathom;
+      @include sans-xs-v2;
+    }
+  }
+}

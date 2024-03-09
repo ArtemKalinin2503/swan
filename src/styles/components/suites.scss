@@ -1,0 +1,68 @@
+.suites {
+  &__nav {
+    padding-top: 50px;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    &__button {
+      transform: translateX(0);
+      left: 0;
+      padding: 0;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $fathom;
+      border: none;
+      background-color: rgba($shice, 0.3);
+      &.active {
+        background-color: $fathom;
+        color: $white;
+      }
+    }
+  }
+  &-big {
+    .card-suite {
+      .splide {
+        &__slide {
+          min-height: 276px;
+          height: 276px;
+          @include screen(laptop) {
+            min-height: 456px;
+            height: 456px;
+          }
+        }
+      }
+      &__content {
+        grid-template-rows: 176px 1fr;
+      }
+      &__description {
+        @include line-clamp-3;
+      }
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    @include sans-base-medium;
+  }
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+  &__button {
+    margin-top: 40px;
+    @include screen(laptop) {
+      display: none;
+    }
+  }
+  &__container {
+    display: none;
+    row-gap: 68px;
+    column-gap: 40px;
+    padding-top: 50px;
+    &.active {
+      display: grid;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.default-slider {
+  &__list {
+    margin-top: 32px;
+    @include screen(laptop) {
+      margin-top: 72px;
+    }
+    &-margin {
+      &-custom {
+        margin-top: 24px;
+        @include screen(laptop) {
+          margin-top: 40px;
+        }
+      }
+    }
+    &__item {
+      @include screen(laptop) {
+        &:hover {
+          .default-slider__image {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+  &__text {
+    margin-top: 12px;
+
+    @include line-clamp-3;
+    @include sans-md;
+    @include screen(laptop) {
+      margin-top: 16px;
+      @include sans-lg;
+    }
+  }
+  &__image {
+    max-height: 314px;
+    overflow: hidden;
+    @include screen(laptop) {
+      max-height: 480px;
+    }
+    img {
+      transition: transform $transition-default;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .splide {
+    &__track {
+      overflow: visible;
+      @include screen(laptop) {
+        overflow: hidden;
+      }
+    }
+    &__arrows {
+      position: absolute;
+      width: 100%;
+      top: calc(480px / 2 + 12px);
+    }
+    &__arrow {
+      &--next {
+        right: -60px;
+      }
+      &--prev {
+        left: -60px;
+      }
+      svg {
+        stroke: $green-400;
+      }
+    }
+  }
+
+  &-two {
+    .default-slider__image {
+      @include screen(laptop) {
+        max-height: 394px;
+      }
+    }
+    .splide {
+      &__track {
+        overflow: visible;
+        @include screen(laptop) {
+          overflow: hidden;
+        }
+      }
+      &__arrows {
+        top: calc(394px / 2 + 12px);
+        position: absolute;
+        width: 100%;
+      }
+      &__arrow {
+        &--next {
+          right: -60px;
+        }
+        &--prev {
+          left: -60px;
+        }
+        svg {
+          stroke: $green-400;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.cruises {
+  &__button {
+    grid-column: span 1;
+    max-width: 343px;
+    @include sans-base-medium;
+    @include screen(tablet) {
+      max-width: 220px;
+      grid-column: span 2;
+    }
+  }
+}

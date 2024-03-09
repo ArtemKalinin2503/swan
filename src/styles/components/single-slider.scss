@@ -1,0 +1,35 @@
+.single-slider {
+  padding-bottom: 40px;
+  margin-top: 36px;
+  @include screen(laptop) {
+    margin-top: 100px;
+  }
+  &__content {
+    text-align: center;
+    max-width: 385px;
+    margin: 36px auto 0;
+    @include screen(laptop) {
+      margin-top: 100px;
+    }
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: $fathom;
+    @include sans-md-medium;
+    @include screen(laptop) {
+      @include chap-sm;
+    }
+  }
+  &__text {
+    margin-top: 8px;
+    @include sans-sm;
+    @include screen(laptop) {
+      margin-top: 16px;
+      @include sans-2xl-1;
+    }
+  }
+}

@@ -1,0 +1,365 @@
+.popup {
+  &.popup-select {
+    .popup__container {
+      gap: 0;
+      padding: 32px 16px 28px;
+      @include screen(laptop) {
+        padding: 60px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+      }
+    }
+    .popup__close {
+      display: none;
+      @include screen(tablet) {
+        display: flex;
+      }
+    }
+    @include screen(laptop) {
+      max-width: 1200px;
+    }
+    .popup-select {
+      &__header {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      &__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        margin-bottom: 20px;
+        @include screen(laptop) {
+          margin-bottom: 32px;
+        }
+      }
+      &__title {
+        text-transform: uppercase;
+        @include chap-sm;
+        @include screen(laptop) {
+          @include chap-base;
+          line-height: 40px;
+        }
+      }
+      &__subtitle {
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        display: none;
+        @include chap-sm;
+        @include screen(laptop) {
+          display: block;
+        }
+      }
+      &__decks {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        @include screen(mobile) {
+          gap: 50px;
+        }
+      }
+      &__deck {
+        position: relative;
+        cursor: pointer;
+        transition: color $transition-default;
+        color: $green-200;
+        @include sans-lg-medium;
+        &.active {
+          color: $fathom;
+        }
+      }
+      &__container {
+        width: 100%;
+        margin-top: 24px;
+        @include screen(laptop) {
+          width: auto;
+          margin-top: 0;
+          margin-bottom: 20px;
+        }
+      }
+      &__scroll {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
+        align-items: flex-start;
+        justify-content: space-between;
+        overflow-y: auto;
+        margin: 0 -16px;
+        width: calc(100% + 32px);
+        max-height: calc(100vh - 162px);
+        height: calc(100vh - 162px);
+        @include screen(laptop) {
+          max-height: calc(100vh - 220px);
+          height: calc(100vh - 220px);
+        }
+      }
+      &__types {
+        min-height: 72px;
+        overflow-x: scroll;
+        max-width: calc(100% + 32px);
+        margin: 0 -16px;
+        padding: 0 16px;
+        display: none;
+        row-gap: 24px;
+        padding-bottom: 16px;
+        &.active {
+          display: inline-flex;
+        }
+        @include screen(laptop) {
+          min-height: 78px;
+          overflow: hidden;
+          align-items: flex-start;
+          flex-direction: column;
+          max-height: 132px;
+          flex-wrap: wrap;
+          padding-bottom: 0;
+        }
+      }
+      &__type {
+        min-height: 54px;
+        min-width: 220px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding-left: 66px;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 50px;
+          height: 50px;
+          border-radius: 5px;
+        }
+        &-premium {
+          &:before {
+            background-color: #43235c;
+          }
+        }
+        &-unavalible {
+          cursor: not-allowed;
+          &:before {
+            background-color: #c7c7c7;
+          }
+        }
+        &-balcony {
+          &:before {
+            background-color: #b799dc;
+          }
+        }
+        &-junior {
+          &:before {
+            background-color: #724e9f;
+          }
+        }
+        &-suite {
+          &:before {
+            background-color: #724e9f;
+          }
+        }
+        &-oceanview {
+          &:before {
+            background-color: #ede1f6;
+          }
+        }
+        p {
+          text-transform: uppercase;
+          color: $green-200;
+          @include sans-base-medium;
+        }
+        span {
+          display: inline-block;
+          @include sans-lg-medium;
+        }
+        svg {
+          transition: opacity $transition-default;
+          opacity: 0;
+          fill: transparent;
+          stroke: $white;
+          position: absolute;
+          left: 13px;
+          top: 16px;
+        }
+        &.active {
+          svg {
+            opacity: 1;
+          }
+        }
+      }
+      &__suites {
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding-bottom: 16px;
+        min-height: 191px;
+        width: calc(100% + 32px);
+        margin: 0 -16px;
+        order: -1;
+        @include screen(laptop) {
+          order: inherit;
+        }
+        svg {
+          stroke: inherit;
+          path {
+            transition:
+              fill $transition-default,
+              stroke $transition-default;
+          }
+        }
+      }
+      &__ship {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+      &__suite {
+        &-avalible {
+          cursor: pointer;
+          &:hover {
+            .popup-select__suite-bg {
+              fill: #b799dc;
+              filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+            }
+            .popup-select__suite-text {
+              fill: $white;
+            }
+          }
+        }
+        &-unavalible {
+          cursor: not-allowed;
+          .popup-select__suite-bg {
+            fill: #cccccc;
+          }
+          .popup-select__suite-text {
+            fill: #7e7e7e;
+          }
+        }
+        &-suite.active {
+          .popup-select__suite-bg {
+            fill: #724e9f;
+            &:hover {
+              fill: #724e9f;
+            }
+          }
+          .popup-select__suite-text {
+            fill: $white;
+          }
+        }
+        &-junior.active {
+          .popup-select__suite-bg {
+            fill: #724e9f;
+            &:hover {
+              fill: #724e9f;
+            }
+          }
+          .popup-select__suite-text {
+            fill: $white;
+          }
+        }
+        &-balcony.active {
+          .popup-select__suite-bg {
+            fill: #b799dc;
+            &:hover {
+              fill: #b799dc;
+            }
+          }
+          .popup-select__suite-text {
+            fill: $white;
+          }
+        }
+        &-premium.active {
+          .popup-select__suite-bg {
+            fill: #43235c;
+            &:hover {
+              fill: #43235c;
+            }
+          }
+          .popup-select__suite-text {
+            fill: $white;
+          }
+        }
+        &.active {
+          &:hover {
+            .popup-select__suite-bg {
+              filter: none;
+            }
+          }
+        }
+        &.selected {
+          .popup-select__suite-bg {
+            fill: $untold-400;
+          }
+          .popup-select__suite-text {
+            fill: $white;
+          }
+          &:hover {
+            .popup-select__suite-bg {
+              fill: $untold-400;
+            }
+          }
+        }
+      }
+      &__summary {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        @include screen(laptop) {
+          align-items: center;
+          flex-direction: row;
+        }
+        .button__label {
+          width: 100%;
+          margin-top: 24px;
+          max-width: 343px;
+          @include screen(laptop) {
+            max-width: 100%;
+            width: auto;
+            margin-top: 0;
+            margin-left: 54px;
+          }
+        }
+      }
+      &__info {
+        width: 100%;
+        margin-top: 8px;
+        @include screen(laptop) {
+          margin-top: 0;
+        }
+      }
+      &__preferences {
+        display: grid;
+        row-gap: 32px;
+        grid-template-columns: repeat(2, minmax(50%, 1fr));
+        column-gap: 36px;
+        @include screen(mobile) {
+          grid-template-columns: repeat(2, minmax(154px, 1fr));
+        }
+        @include screen(laptop) {
+          grid-template-columns: repeat(4, minmax(154px, 1fr));
+          gap: 70px;
+        }
+      }
+      &__preference {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        p {
+          text-transform: uppercase;
+          color: $green-200;
+          @include sans-base-medium;
+        }
+        span {
+          display: inline-block;
+          @include sans-lg-medium;
+        }
+      }
+    }
+  }
+}

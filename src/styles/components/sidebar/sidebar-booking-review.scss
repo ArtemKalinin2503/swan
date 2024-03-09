@@ -1,0 +1,158 @@
+.sidebar {
+  &-booking-review {
+    opacity: 1;
+    margin-top: 0;
+    left: auto;
+    height: auto;
+    z-index: auto;
+    transform: translateY(0);
+    border-radius: 0;
+    padding: 0;
+    bottom: auto;
+    position: static;
+    display: block;
+    @include screen(laptop) {
+      margin-top: 97px;
+    }
+    .sidebar {
+      &__promocode {
+        margin-top: 60px;
+        @include screen(laptop) {
+          margin-top: 37px;
+        }
+      }
+      &__subtitle {
+        text-transform: uppercase;
+        color: $fathom;
+        @include sans-base-medium;
+      }
+      &__note {
+        margin-top: 12px;
+        color: $green-200;
+        @include sans-sm-medium;
+      }
+      &__input {
+        margin-top: 16px;
+        max-width: 380px;
+        position: relative;
+        border-bottom: 1px solid $green-200;
+        input {
+          padding: 16px 0;
+          width: 100%;
+          @include sans-md;
+        }
+      }
+      &__description {
+        margin-top: 45px;
+        @include screen(laptop) {
+          margin-top: 56px;
+        }
+        input {
+          position: absolute;
+          opacity: 0;
+          width: 0;
+          height: 0;
+          display: none;
+          @include screen(laptop) {
+            display: flex;
+          }
+        }
+      }
+      &__heading {
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        color: $green-200;
+        @include sans-base-medium;
+      }
+      &__text {
+        span {
+          @include sans-3xl;
+        }
+      }
+      &__img {
+        height: 277px;
+        overflow: hidden;
+        width: 100%;
+        display: none;
+        @include screen(laptop) {
+          display: block;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__wrapper {
+        margin-top: 30px;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        column-gap: 24px;
+        display: none;
+        @include screen(laptop) {
+          display: flex;
+        }
+      }
+      &__button {
+        margin-top: 16px;
+        padding: 16px 40px;
+        width: 100%;
+        @include screen(tablet) {
+          width: auto;
+        }
+        @include screen(laptop) {
+          margin-top: 30px;
+          width: 100%;
+        }
+        &-green {
+          margin-top: 30px;
+        }
+        &-main {
+          @include screen(laptop) {
+            display: none;
+          }
+        }
+        &.popup-trigger {
+          @include screen(laptop) {
+            width: auto;
+          }
+        }
+      }
+      &__callback {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include screen(laptop) {
+          margin-top: 82px;
+        }
+        & > span {
+          padding-left: 42px;
+          color: $green-200;
+          @include sans-base-medium;
+        }
+        svg {
+          stroke: $untold-400;
+          fill: $untold-400;
+        }
+      }
+      &__phone {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 4px;
+        gap: 10px;
+        span {
+          transition: color $transition-default;
+          @include sans-lg-medium;
+        }
+        @include screen(laptop) {
+          &:hover {
+            span {
+              color: $untold-400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

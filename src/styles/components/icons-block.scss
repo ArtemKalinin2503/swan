@@ -1,0 +1,20 @@
+.icons-block {
+  margin-top: 66px;
+  padding-bottom: 60px;
+  @include screen(laptop) {
+    padding-bottom: 0;
+  }
+  &__wrapper {
+    @include screen(laptop) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
+  &.is-initialized:not(.is-active) .splide__list {
+    @include screen(laptop) {
+      display: flex;
+    }
+  }
+}

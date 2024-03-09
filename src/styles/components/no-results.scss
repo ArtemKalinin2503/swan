@@ -1,0 +1,33 @@
+.no-results {
+  &__form {
+    margin-top: 32px;
+    max-width: 732px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__label {
+    display: block;
+    border: 1px solid $green-200;
+    border-radius: 4px;
+    width: 100%;
+  }
+  &__input {
+    padding: 8px 58px 8px 16px;
+    width: 100%;
+    background-color: transparent;
+  }
+  &__icon {
+    stroke: $fathom;
+  }
+  &__button {
+    position: absolute;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

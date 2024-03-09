@@ -1,0 +1,23 @@
+.not-found {
+  &__title {
+    // background: url("./images/not-found.jpeg");
+    background-position: 50% 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-align: center;
+    background-size: 239px;
+    font-size: 120px;
+    line-height: 120%;
+    margin-bottom: 32px;
+    @include screen(laptop) {
+      background-size: 400px;
+      font-size: 200px;
+      margin-bottom: 0;
+    }
+  }
+  &__text {
+    text-align: center;
+    @include sans-2xl-1;
+  }
+}

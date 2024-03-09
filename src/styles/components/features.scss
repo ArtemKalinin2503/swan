@@ -1,0 +1,102 @@
+.features {
+  margin-top: 32px;
+  @include screen(tablet) {
+    margin-top: 70px;
+  }
+  .splide {
+    padding-bottom: 44px;
+    width: calc(100% + 16px);
+    &__track {
+      overflow: visible;
+    }
+    @include screen(tablet) {
+      padding-bottom: 0;
+    }
+  }
+  &.is-initialized:not(.is-active) .splide__list {
+    @include screen(tablet) {
+      display: grid;
+    }
+  }
+  .grid-three {
+    @include screen(tablet) {
+      gap: 40px;
+    }
+  }
+  .feature {
+    grid-column: span 1;
+    padding: 21px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 314px;
+    gap: 8px;
+    @include screen(tablet) {
+      min-height: 220px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($black, 0.35);
+      z-index: 2;
+    }
+    &-large {
+      grid-column: span 2;
+    }
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__title {
+      color: $white;
+      position: absolute;
+      bottom: -44px;
+      left: 0;
+      z-index: 3;
+      @include line-clamp-1;
+      @include sans-lg;
+      @include screen(tablet) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+      }
+    }
+    &__text {
+      transition:
+        max-height $transition-default ease-in-out,
+        opacity $transition-default;
+      color: $white;
+      position: relative;
+      z-index: 3;
+      @include line-clamp-3;
+      @include sans-sm;
+      @include screen(laptop) {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+      }
+    }
+    @include screen(laptop) {
+      &:hover {
+        .feature__text {
+          max-height: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+.sidebar {
+  &-booking {
+    & > .wrapper {
+      position: fixed;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      margin-top: 10px;
+      transform: translateY(-50%);
+      transition: transform $transition-default;
+      @include screen(laptop) {
+        position: static;
+        transform: translateY(0);
+        top: 0;
+        width: auto;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -60px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          #fff 20.47%
+        );
+        @include screen(laptop) {
+          display: none;
+        }
+      }
+    }
+    &:after {
+      width: 100%;
+      content: "";
+      position: absolute;
+      bottom: -999px;
+      height: 999px;
+      background-color: $white;
+      display: none;
+      @include screen(laptop) {
+        display: block;
+      }
+    }
+    @include screen(laptop) {
+      padding: 32px 16px;
+      opacity: 1;
+      margin-top: 0;
+      left: auto;
+      height: auto;
+      z-index: auto;
+      transform: translateY(0);
+      border-radius: 0;
+      padding: 0;
+      bottom: auto;
+      position: static;
+      display: block;
+    }
+    &__wrapper {
+      position: relative;
+      padding: 0 16px;
+      @include screen(laptop) {
+        padding: 0;
+      }
+    }
+    .sidebar {
+      &__title {
+        color: $fathom;
+        text-transform: uppercase;
+        @include chap-sm;
+        display: none;
+        @include screen(laptop) {
+          display: block;
+        }
+      }
+      &__name {
+        margin-top: 16px;
+        @include sans-lg;
+      }
+      &__form {
+        input {
+          position: absolute;
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+      }
+      &__number {
+        text-transform: uppercase;
+        color: $white-400;
+        margin-top: 12px;
+      }
+      &__data {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        span {
+          @include sans-sm;
+        }
+      }
+      &__input {
+        position: relative;
+        display: none;
+        &-location {
+          svg {
+            stroke: $untold-400;
+            fill: $untold-400;
+          }
+        }
+        &-ship {
+          svg {
+            stroke: transparent;
+            fill: $untold-400;
+          }
+        }
+        &-calendar {
+          svg {
+            stroke: transparent;
+            fill: $untold-400;
+          }
+        }
+        @include screen(laptop) {
+          display: flex;
+        }
+      }
+      &__date {
+        margin-left: 33px;
+        span {
+          color: $green-200;
+        }
+        @include sans-sm;
+        @include screen(laptop) {
+          &.sidebar__input {
+            display: inline;
+          }
+        }
+      }
+      &__img {
+        margin-top: 40px;
+        max-height: 277px;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        display: none;
+        @include screen(laptop) {
+          display: block;
+        }
+        img {
+          object-fit: cover;
+        }
+      }
+      &__subtitle {
+        margin-top: 32px;
+        color: $green-200;
+        text-transform: uppercase;
+        @include sans-base-medium;
+        display: none;
+        @include screen(laptop) {
+          display: block;
+        }
+      }
+      &__room {
+        margin-top: 12px;
+        @include sans-lg-medium;
+      }
+      &__wrapper {
+        margin-top: 30px;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        column-gap: 24px;
+        display: none;
+        @include screen(laptop) {
+          display: flex;
+        }
+        &-full {
+          .sidebar__description {
+            width: 100%;
+          }
+        }
+      }
+      &__description {
+        width: 114px;
+      }
+      &__heading {
+        text-transform: uppercase;
+        color: $green-200;
+        @include sans-base-medium;
+      }
+      &__text {
+        span {
+          @include sans-lg-medium;
+        }
+      }
+      &__button {
+        margin-top: 30px;
+        width: 100%;
+        @include screen(tablet) {
+          width: auto;
+        }
+        @include screen(laptop) {
+          width: 100%;
+        }
+        &-green {
+          margin-top: 30px;
+        }
+        &.popup-trigger {
+          @include screen(laptop) {
+            width: auto;
+          }
+        }
+      }
+      &__note {
+        margin-top: 18px;
+        color: $green-200;
+        max-width: 377px;
+        @include sans-sm-medium;
+      }
+      &__callback {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        & > span {
+          padding-left: 42px;
+          color: $green-200;
+          @include sans-base-medium;
+        }
+        svg {
+          stroke: $untold-400;
+          fill: $untold-400;
+        }
+      }
+      &__phone {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 4px;
+        gap: 10px;
+        span {
+          transition: color $transition-default;
+          @include sans-lg-medium;
+        }
+        @include screen(laptop) {
+          &:hover {
+            span {
+              color: $untold-400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

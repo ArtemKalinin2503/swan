@@ -1,0 +1,26 @@
+.subheading {
+  margin-top: 36px;
+  @include screen(tablet) {
+    margin-top: 40px;
+  }
+  &-no-margin {
+    &-top {
+      margin-top: 0;
+    }
+  }
+  &__title {
+    color: $fathom;
+    margin-bottom: 24px;
+    @include sans-xl;
+    @include screen(tablet) {
+      @include sans-3xl;
+    }
+  }
+  &__text {
+    max-width: 1100px;
+    @include sans-sm;
+    @include screen(tablet) {
+      @include sans-md;
+    }
+  }
+}

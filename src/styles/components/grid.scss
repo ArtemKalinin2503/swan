@@ -1,0 +1,141 @@
+.grid {
+  display: grid;
+  &__gap {
+    gap: 40px;
+    &-bottom {
+      row-gap: 80px;
+      @include screen(laptop) {
+        row-gap: 54px;
+      }
+    }
+    &-medium {
+      gap: 40px;
+      @include screen(laptop) {
+        row-gap: 64px;
+        column-gap: 40px;
+      }
+    }
+    &-big {
+      gap: 80px;
+      @include screen(tablet) {
+        gap: 40px;
+      }
+      @include screen(laptop) {
+        column-gap: 74px;
+        row-gap: 70px;
+      }
+    }
+    &-sm {
+      row-gap: 24px;
+      @include screen(tablet) {
+        row-gap: 40px;
+      }
+    }
+  }
+  &-two {
+    grid-template-columns: 1fr;
+    @include screen(tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  &-three {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @include screen(tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include screen(laptop) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  &-four {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @include screen(tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include screen(laptop) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  &-six {
+    grid-template-columns: 1fr;
+    @include screen(tablet) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+  &-twelve {
+    grid-template-columns: 1fr;
+    @include screen(tablet) {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+  &-offset {
+    padding: 40px 0;
+    @include screen(laptop) {
+      padding: 96px 0;
+    }
+    &-sm {
+      padding: 40px 0;
+      @include screen(laptop) {
+        padding: 48px 0;
+      }
+    }
+  }
+  &-cruises {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+    @include screen(laptop) {
+      margin-top: 124px;
+      gap: 122px;
+      grid-template-columns: 350px 1fr;
+    }
+  }
+  &-partners {
+    gap: 20px;
+    @include screen(laptop) {
+      grid-template-columns: 1fr 336px;
+      gap: 93px;
+    }
+  }
+  &-booking {
+    grid-template-columns: 1fr;
+    margin-top: 18px;
+    padding-bottom: 356px;
+    .wrapper {
+      padding: 0;
+    }
+    @include screen(laptop) {
+      margin-top: 70px;
+      padding-bottom: 0;
+      gap: 76px;
+      grid-template-columns: 1fr 394px;
+    }
+    &.active {
+      padding-bottom: 0;
+      .wrapper {
+        padding-top: 0;
+        top: 0;
+        transition: 0s;
+        position: relative;
+        transform: translateY(0);
+        &:before {
+          display: none;
+        }
+        .sidebar {
+          &-booking {
+            &__wrapper {
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+    &-review {
+      @include screen(laptop) {
+        margin-top: 97px;
+        padding-bottom: 0;
+        gap: 92px;
+        grid-template-columns: 1fr 512px;
+      }
+    }
+  }
+}

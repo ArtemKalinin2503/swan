@@ -1,0 +1,147 @@
+.faq {
+  margin-top: 52px;
+  @include screen(laptop) {
+    margin-top: 90px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    column-gap: 115px;
+  }
+  &__button {
+    transition: transform $transition-default;
+  }
+  &__body {
+    display: none;
+    padding-bottom: 20px;
+    @include screen(tablet) {
+      padding-bottom: 26px;
+    }
+    p {
+      margin-top: 8px;
+      @include sans-sm;
+      &:first-child {
+        margin-top: 0;
+      }
+      @include screen(tablet) {
+        @include sans-md;
+      }
+    }
+  }
+  &__sidebar {
+    position: relative;
+    min-width: 312px;
+    display: none;
+    @include screen(laptop) {
+      display: block;
+    }
+  }
+  &__sticky {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    @include sans-lg-medium;
+    span {
+      color: $green-300;
+      transition: color $transition-default;
+    }
+    &__icon {
+      fill: $green-300;
+      stroke: transparent;
+      opacity: 0;
+      transition: opacity $transition-default;
+    }
+    &.active {
+      span {
+        color: $text;
+      }
+      .faq__link__icon {
+        opacity: 1;
+      }
+    }
+    @include screen(laptop) {
+      &:hover {
+        span {
+          color: $text;
+        }
+        .faq__link__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__content {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    @include screen(tablet) {
+      gap: 34px;
+    }
+    @include screen(laptop) {
+      gap: 100px;
+    }
+  }
+  &__block {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+  &__title {
+    color: $fathom;
+    @include chap-xs;
+    @include screen(tablet) {
+      text-transform: uppercase;
+      @include chap-sm;
+    }
+  }
+  &__item {
+    padding: 20px 0 0;
+    width: 100%;
+    border-bottom: 1px solid $green-200;
+    @include screen(tablet) {
+      padding: 26px 0 0;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &.active {
+      .faq__button {
+        transform: rotate(180deg);
+      }
+      .faq__body {
+        display: block;
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    cursor: pointer;
+    @include screen(tablet) {
+      padding-bottom: 26px;
+    }
+  }
+  &__arrow {
+    stroke: $green-200;
+  }
+  &__name {
+    padding-right: 16px;
+    @include sans-base;
+    @include screen(tablet) {
+      @include sans-2xl-1;
+    }
+  }
+}

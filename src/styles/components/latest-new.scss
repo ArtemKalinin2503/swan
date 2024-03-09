@@ -1,0 +1,84 @@
+.latest-new {
+  &__wrapper {
+    display: grid;
+    padding: 40px 0;
+    border-bottom: 1px solid $green-200;
+    gap: 32px;
+    @include screen(tablet) {
+      padding: 60px 0;
+    }
+    @include screen(laptop) {
+      grid-template-columns: 475px 1fr;
+      gap: 108px;
+    }
+  }
+  &:last-child {
+    .latest-new__wrapper {
+      border-bottom: none;
+    }
+  }
+  &__image {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    @include chap-xs;
+    @include screen(tablet) {
+      font-size: 36px;
+      line-height: 42px;
+      @include line-clamp-2;
+    }
+  }
+  &__date {
+    color: $green-200;
+    @include sans-base-medium;
+  }
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    @include screen(tablet) {
+      gap: 16px;
+    }
+  }
+  &__tags {
+    display: flex;
+    gap: 8px;
+    span {
+      text-transform: uppercase;
+      color: $green-200;
+      @include sans-sm-med;
+      @include screen(tablet) {
+        @include sans-base-medium;
+      }
+    }
+  }
+  &__text {
+    color: $fathom;
+    @include line-clamp-7;
+    @include sans-sm;
+    @include screen(tablet) {
+      @include sans-md;
+    }
+  }
+  .button {
+    margin-top: 8px;
+    padding: 17px 64px;
+    width: 100%;
+    @include screen(tablet) {
+      width: auto;
+      margin-top: auto;
+    }
+  }
+}

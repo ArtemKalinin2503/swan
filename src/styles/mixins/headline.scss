@@ -1,0 +1,111 @@
+.headline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  @include screen(laptop) {
+    gap: 24px;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: $fathom;
+    @include chap-sm;
+    @include screen(tablet) {
+      @include chap-base;
+    }
+    @include screen(laptop) {
+      @include chap-2lg;
+    }
+  }
+  &__description {
+    @include sans-sm-medium;
+    @include screen(laptop) {
+      @include sans-lg-medium;
+      max-width: 1202px;
+    }
+  }
+  &__text {
+    margin-top: 24px;
+    @include sans-sm;
+    @include screen(laptop) {
+      margin-top: 48px;
+      @include sans-lg-medium;
+    }
+  }
+  &-white {
+    .headline__title {
+      color: $white;
+    }
+  }
+  &-centered {
+    align-items: center;
+    .headline__title {
+      text-align: center;
+    }
+    .headline__description {
+      text-align: center;
+      @include screen(laptop) {
+        @include sans-md;
+      }
+    }
+    & + .headline__text {
+      margin-top: 13px;
+      text-align: center;
+    }
+  }
+  &-note {
+    gap: 24px;
+    flex-direction: column-reverse;
+    @include screen(laptop) {
+      gap: 40px;
+    }
+    .headline__description {
+      text-transform: uppercase;
+      margin-top: 0;
+      color: $green-200;
+      @include sans-sm-med;
+      @include screen(laptop) {
+        @include sans-base-medium;
+      }
+    }
+  }
+  &-sm {
+    gap: 30px;
+    .headline__title {
+      @include chap-sm;
+    }
+  }
+  &-md {
+    .headline__title {
+      @include chap-sm;
+      @include screen(laptop) {
+        @include chap-2base;
+      }
+    }
+  }
+  &-lg {
+    .headline__title {
+      @include chap-sm;
+      @include screen(laptop) {
+        font-size: 58px;
+        line-height: 60px;
+      }
+    }
+  }
+  &-xl {
+    .headline__title {
+      @include chap-sm;
+      @include screen(laptop) {
+        @include chap-2lg;
+      }
+    }
+  }
+  &-booking {
+    .headline__title {
+      display: none;
+      @include screen(laptop) {
+        display: block;
+      }
+    }
+  }
+}

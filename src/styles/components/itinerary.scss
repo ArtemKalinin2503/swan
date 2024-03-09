@@ -1,0 +1,23 @@
+.itinerary {
+  padding-top: 56px;
+  @include screen(tablet) {
+    padding-top: 78px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    @include screen(tablet) {
+      gap: 80px;
+    }
+    @include screen(laptop) {
+      gap: 200px;
+    }
+  }
+  &__button {
+    margin-top: 40px;
+    @include screen(tablet) {
+      margin-top: 80px;
+    }
+  }
+}

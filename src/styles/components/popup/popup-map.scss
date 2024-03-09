@@ -1,0 +1,36 @@
+.popup-map {
+  .popup {
+    &__heading {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    &__subtitle {
+      text-transform: uppercase;
+      color: $green-200;
+      @include sans-sm-medium;
+      @include screen(tablet) {
+        @include sans-base-medium;
+      }
+    }
+    &__title {
+      color: $fathom;
+      @include chap-base;
+      @include screen(tablet) {
+        @include chap-xl;
+      }
+    }
+    &__image {
+      border: 1px solid $white-150;
+      overflow: hidden;
+      @include screen(tablet) {
+        max-height: calc(100vh - 288px);
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

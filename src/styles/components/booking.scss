@@ -1,0 +1,10 @@
+.booking {
+  .suites {
+    &__nav {
+      padding-top: 0;
+      @include screen(laptop) {
+        padding-top: 50px;
+      }
+    }
+  }
+}

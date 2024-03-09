@@ -1,0 +1,313 @@
+.partner-block {
+  position: relative;
+  overflow: hidden;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    @include screen(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 80px;
+      min-height: 484px;
+    }
+    @include screen(laptop) {
+      gap: 106px;
+      column-gap: 0;
+      min-height: 506px;
+    }
+  }
+  &__surname {
+    color: $fathom;
+    margin: 16px 0 24px;
+    @include sans-md;
+    @include screen(tablet) {
+      @include sans-3xl;
+    }
+  }
+  &__image {
+    order: -1;
+    height: 200px;
+    margin-bottom: 16px;
+    &-mob {
+      display: block;
+      width: 100%;
+      margin-top: 24px;
+      order: -1;
+      @include screen(tablet) {
+        display: none;
+        order: none;
+      }
+    }
+    &-pc {
+      display: none;
+      order: 2;
+      height: 100%;
+      img {
+        max-height: 744px;
+        height: 100%;
+      }
+      @include screen(tablet) {
+        display: block;
+      }
+    }
+    @include screen(laptop) {
+      position: absolute;
+      order: 1;
+      right: 0;
+      max-width: calc(50% - 53px);
+      width: 100%;
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      aspect-ratio: 1/1;
+      height: 100%;
+      @include screen(laptop) {
+        object-fit: cover;
+        object-position: center right;
+      }
+      @include screen(desktop) {
+        object-position: top;
+      }
+    }
+  }
+  &__subtitle {
+    color: $green-200;
+    text-transform: uppercase;
+    @include sans-base-medium;
+  }
+  &__title {
+    color: $fathom;
+    text-transform: uppercase;
+    margin: 24px 0;
+    @include chap-sm;
+    @include screen(laptop) {
+      margin: 36px 0 42px;
+    }
+  }
+  &__text {
+    max-width: 548px;
+    @include line-clamp-10;
+    @include sans-base;
+    @include screen(laptop) {
+      @include sans-lg;
+    }
+    &.active {
+      @include line-clamp-auto;
+    }
+  }
+  &__content {
+    @include screen(laptop) {
+      padding: 65px 0;
+    }
+  }
+  &__button {
+    order: 4;
+    width: 100%;
+    margin-top: 24px;
+    @include screen(tablet) {
+      width: auto;
+    }
+    @include screen(laptop) {
+      margin-top: 48px;
+    }
+  }
+  &-unreversed {
+    .partner-block__image {
+      order: 1;
+      margin-bottom: 16px;
+      @include screen(tablet) {
+        order: 1;
+      }
+    }
+  }
+  &-reversed {
+    .partner-block__image {
+      order: 1;
+      margin-bottom: 16px;
+      img {
+        object-position: center left;
+      }
+      @include screen(tablet) {
+        margin-bottom: 0;
+        order: -1;
+      }
+      @include screen(laptop) {
+        left: 0;
+        right: auto;
+      }
+    }
+    .partner-block__content {
+      @include screen(laptop) {
+        grid-column-start: 2;
+      }
+    }
+  }
+  &-cruise-page {
+    .partner-block__title {
+      @include screen(laptop) {
+        margin-bottom: 42px;
+      }
+    }
+    .partner-block__image-mob {
+      height: auto;
+      order: 0;
+      margin-bottom: 16px;
+      margin-top: 0;
+      @include screen(tablet) {
+        margin-bottom: 0;
+      }
+      @include screen(laptop) {
+        order: 1;
+      }
+    }
+  }
+  &-sameheight {
+    .partner-block__title {
+      margin-top: 0;
+      order: -1;
+    }
+    .partner-block__subtitle {
+      order: -1;
+    }
+    .partner-block__content {
+      padding: 0;
+      @include screen(laptop) {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+    .partner-block__wrapper {
+      @include screen(tablet) {
+        min-height: 396px;
+        .partner-block__image {
+          max-height: 396px;
+        }
+      }
+    }
+  }
+  &-big {
+    .partner-block__wrapper {
+      @include screen(laptop) {
+        min-height: 630px;
+        .partner-block__image {
+          max-height: 630px;
+        }
+      }
+    }
+    .partner-block__title {
+      @include chap-base;
+      @include screen(laptop) {
+        @include chap-3lg;
+        margin-bottom: 42px;
+      }
+    }
+    .partner-block__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &-what {
+    .partner-block__title {
+      order: -1;
+    }
+    .partner-block__text {
+      order: 1;
+    }
+    .partner-block__image-mob {
+      order: 2;
+    }
+    .partner-block__button {
+      order: 3;
+    }
+  }
+  &-service {
+    .partner-block__title {
+      margin-top: 0;
+      order: -1;
+    }
+    .partner-block__subtitle {
+      order: -1;
+      margin-bottom: 28px;
+      @include screen(laptop) {
+        margin-bottom: 36px;
+      }
+    }
+  }
+  &-about {
+    .partner-block__wrapper {
+      @include screen(laptop) {
+        min-height: 506px;
+        .partner-block__image {
+          max-height: 506px;
+        }
+      }
+    }
+    .partner-block__title {
+      margin-top: 0;
+      order: -1;
+      margin-bottom: 28px;
+      @include screen(laptop) {
+        margin-bottom: 42px;
+        white-space: nowrap;
+        @include chap-3lg;
+      }
+    }
+    .partner-block__subtitle {
+      order: -1;
+      margin-bottom: 28px;
+      @include screen(laptop) {
+        margin-bottom: 36px;
+      }
+    }
+    .partner-block__content {
+      padding: 0;
+    }
+  }
+  &-destination {
+    .partner-block__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .partner-block__image-mob {
+      order: 2;
+    }
+    .partner-block__wrapper {
+      @include screen(laptop) {
+        min-height: 630px;
+        .partner-block__image {
+          max-height: 630px;
+        }
+      }
+    }
+  }
+  &-sm {
+    .partner-block__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .partner-block__image {
+      @include screen(tablet) {
+        height: 200px;
+      }
+      @include screen(laptop) {
+        width: 100%;
+        img {
+          height: 394px;
+        }
+      }
+    }
+    .partner-block__text {
+      order: -1;
+      margin-bottom: 0;
+      @include line-clamp-8;
+    }
+  }
+}

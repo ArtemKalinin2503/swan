@@ -1,0 +1,130 @@
+.article {
+  height: 100%;
+  &__image {
+    overflow: hidden;
+    @include screen(tablet) {
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform $transition-slow;
+      max-height: 150px;
+      height: 150px;
+      @include screen(tablet) {
+        max-height: 410px;
+        height: 100%;
+      }
+      @include screen(laptop) {
+        max-height: 100%;
+      }
+    }
+  }
+  @include screen(laptop) {
+    &:hover {
+      .article__image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    width: 100%;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    @include screen(tablet) {
+      padding: 20px 24px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.35);
+    }
+  }
+  &__name {
+    margin-bottom: 12px;
+
+    @include sans-lg;
+    @include line-clamp-2;
+    @include screen(tablet) {
+      color: $white;
+    }
+  }
+  &__text {
+    transition:
+      max-height $transition-default ease-in-out,
+      opacity $transition-default;
+    color: $white;
+    position: relative;
+    z-index: 3;
+    @include sans-sm;
+    @include line-clamp-2;
+    @include screen(laptop) {
+      @include sans-base;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+  @include screen(laptop) {
+    &:hover {
+      .article__text {
+        max-height: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  &__link {
+    margin-top: 12px;
+    text-transform: uppercase;
+    color: $white;
+    border-bottom: 1px solid $white;
+    display: none;
+    @include sans-sm-med;
+    @include screen(tablet) {
+      display: inline-block;
+    }
+  }
+  &__date {
+    color: $white-400;
+    @include sans-base;
+    @include screen(tablet) {
+      color: $shice;
+      @include sans-md;
+    }
+  }
+  &-same-as-pc {
+    .article {
+      &__image {
+        height: 100%;
+        img {
+          max-height: 343px;
+          min-height: 343px;
+          @include screen(tablet) {
+            max-height: 100%;
+          }
+        }
+      }
+      &__content {
+        padding: 20px 24px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.35);
+      }
+      &__name {
+        color: $white;
+      }
+      &__link {
+        display: inline-block;
+      }
+    }
+  }
+}

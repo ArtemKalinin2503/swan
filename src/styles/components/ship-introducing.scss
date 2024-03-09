@@ -1,0 +1,192 @@
+.ship-introducing {
+  position: relative;
+  &__image {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: 25% 50%;
+      object-fit: cover;
+      @include screen(tablet) {
+        object-position: center;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(
+        84deg,
+        rgba(33, 41, 95, 0) -21.99%,
+        rgba(22, 27, 58, 0.26) -21.99%,
+        rgba(18, 21, 40, 0.53) 115.48%
+      );
+    }
+  }
+  &__wrapper {
+    position: relative;
+    z-index: 3;
+    padding: 55px 0 70px;
+    @include screen(laptop) {
+      padding-top: 90px;
+      padding-bottom: 100px;
+    }
+  }
+  &__content {
+    color: $white;
+  }
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      stroke: $white;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    @include chap-sm;
+    @include screen(laptop) {
+      @include chap-base;
+    }
+    @include screen(laptop) {
+      @include chap-2lg;
+    }
+  }
+  &__description {
+    margin-top: 46px;
+    @include sans-base;
+    @include screen(tablet) {
+      margin-top: 0;
+    }
+    @include screen(laptop) {
+      @include sans-lg-medium;
+    }
+  }
+  &__items {
+    margin-top: 46px;
+    display: flex;
+    justify-content: space-between;
+    @include screen(tablet) {
+      margin-top: 0;
+      margin-top: -58px;
+      gap: 56px;
+      justify-content: flex-start;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__count {
+    margin-top: 16px;
+    @include chap-sm;
+  }
+  &__name {
+    @include sans-base-small;
+  }
+  &__grid {
+    &-four {
+      display: flex;
+      @include screen(laptop) {
+        column-gap: 78px;
+        display: grid;
+        row-gap: 72px;
+      }
+    }
+    &-twentyfour {
+      display: flex;
+      position: relative;
+      @include screen(laptop) {
+        display: grid;
+        grid-template-columns: repeat(24, minmax(0, 1fr));
+      }
+    }
+  }
+  &__slider {
+    @include screen(laptop) {
+      margin-bottom: -36px;
+    }
+    &.is-initialized:not(.is-active) .splide__list {
+      @include screen(laptop) {
+        display: grid;
+      }
+    }
+  }
+  &__data {
+    text-align: center;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 1px;
+      background-color: $white;
+      opacity: 0.5;
+      width: 100%;
+      left: 0;
+      display: none;
+      @include screen(laptop) {
+        display: block;
+      }
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      &:before {
+        @include screen(laptop) {
+          padding-top: 0;
+          display: none;
+        }
+      }
+    }
+    @include screen(laptop) {
+      padding: 36px 0;
+      display: block;
+      text-align: left;
+      grid-column: span 7;
+    }
+    &-wide {
+      @include screen(laptop) {
+        grid-column: span 10;
+      }
+    }
+    &-small {
+      @include screen(laptop) {
+        grid-column: span 3;
+      }
+    }
+  }
+  &__bottom {
+    margin-top: 148px;
+    @include screen(laptop) {
+      margin-top: 100px;
+    }
+  }
+  &__parameter {
+    @include sans-base-medium;
+  }
+  &__value {
+    margin-top: 8px;
+    @include sans-xl-base;
+    font-weight: 500;
+  }
+}

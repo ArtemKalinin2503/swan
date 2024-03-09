@@ -1,0 +1,121 @@
+.privacy-policy {
+  margin-top: 52px;
+  @include screen(laptop) {
+    margin-top: 90px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    column-gap: 115px;
+  }
+  &__sidebar {
+    position: relative;
+    min-width: 324px;
+    display: none;
+    @include screen(laptop) {
+      display: block;
+    }
+  }
+  &__sticky {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    @include sans-lg-medium;
+    span {
+      color: $green-300;
+      transition: color $transition-default;
+    }
+    &__icon {
+      fill: $green-300;
+      stroke: transparent;
+      opacity: 0;
+      transition: opacity $transition-default;
+    }
+    &.active {
+      span {
+        color: $text;
+      }
+      .privacy-policy__link__icon {
+        opacity: 1;
+      }
+    }
+    @include screen(laptop) {
+      &:hover {
+        span {
+          color: $text;
+        }
+        .privacy-policy__link__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__content {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    @include screen(tablet) {
+      gap: 34px;
+    }
+    @include screen(laptop) {
+      gap: 100px;
+    }
+  }
+  &__block {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+  &__title {
+    color: $fathom;
+    @include chap-xs;
+    @include screen(tablet) {
+      text-transform: uppercase;
+      @include chap-sm;
+    }
+  }
+  &__item {
+    padding: 16px 0 0;
+    width: 100%;
+    @include screen(tablet) {
+      padding: 26px 0 0;
+    }
+  }
+  &__body {
+    p {
+      margin-top: 8px;
+      @include sans-2xs;
+      &:first-child {
+        margin-top: 0;
+      }
+      @include screen(tablet) {
+        @include sans-md;
+      }
+    }
+    ul {
+      padding-left: 16px;
+      list-style-type: disc;
+      @include screen(tablet) {
+        padding-left: 24px;
+      }
+      li {
+        margin-top: 8px;
+        @include sans-2xs;
+        @include screen(tablet) {
+          @include sans-md;
+        }
+      }
+    }
+  }
+}

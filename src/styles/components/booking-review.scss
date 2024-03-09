@@ -1,0 +1,175 @@
+.booking-review {
+  .grid {
+    row-gap: 12px;
+    &-six {
+      column-gap: 86px;
+      div {
+        &:first-child {
+          grid-column: span 2;
+        }
+        &:nth-child(6) {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+  .sidebar__button {
+    display: none;
+    @include screen(laptop) {
+      display: inline-flex;
+      margin-top: 40px;
+      padding: 16px 137px;
+    }
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__card {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    @include screen(mobile) {
+      justify-content: space-between;
+    }
+    @include screen(tablet) {
+      gap: 32px;
+      justify-content: start;
+    }
+    @include screen(laptop) {
+      gap: 46px;
+    }
+    &-justify {
+      justify-content: space-between;
+      .booking-review__column {
+        &:first-child {
+          width: 100%;
+          @include screen(laptop) {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+  &__text {
+    @include sans-md;
+    &-medium {
+      @include sans-lg-medium;
+    }
+  }
+  &__wrapper {
+    margin-top: 24px;
+    @include screen(laptop) {
+      margin-top: 44px;
+    }
+  }
+  &__title {
+    margin-top: 24px;
+    @include sans-lg-medium;
+    @include screen(laptop) {
+      margin-top: 55px;
+    }
+  }
+  &__subtitle {
+    color: $green-200;
+    text-transform: uppercase;
+    white-space: nowrap;
+    @include sans-base-medium;
+  }
+  &__block {
+    padding: 24px 0;
+    @include screen(laptop) {
+      padding: 36px 0;
+    }
+    &:nth-child(1) {
+      @include screen(laptop) {
+        padding-top: 32px;
+      }
+    }
+    &:nth-child(2) {
+      border: 1px solid $green-200;
+      border-width: 1px 0 1px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+  &__number {
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    color: $white-400;
+    @include sans-base-medium;
+  }
+  &__information {
+    margin-top: 12px;
+    column-gap: 46px;
+  }
+  &__cabin {
+    margin-top: 34px;
+    @include screen(laptop) {
+      margin-top: 44px;
+    }
+  }
+  &__date {
+    color: $green-200;
+    @include sans-sm;
+  }
+  &__data {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    span {
+      @include sans-sm;
+    }
+  }
+  &__image {
+    height: 290px;
+    width: 100%;
+    overflow: hidden;
+    margin: 33px auto 0;
+    @include screen(tablet) {
+      height: 390px;
+    }
+    @include screen(laptop) {
+      display: none;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__input {
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    &-destination {
+      svg {
+        stroke: transparent;
+        fill: $untold-400;
+      }
+    }
+    &-ship {
+      svg {
+        stroke: transparent;
+        fill: $untold-400;
+      }
+    }
+    &-calendar {
+      svg {
+        stroke: transparent;
+        fill: $untold-400;
+      }
+    }
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
+  &__note {
+    color: $green-200;
+    @include sans-lg-medium;
+  }
+}

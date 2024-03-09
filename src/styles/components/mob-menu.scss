@@ -1,0 +1,234 @@
+.mob-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $fathom;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  transition:
+    opacity $transition-default,
+    z-index $transition-default,
+    visibility $transition-default;
+  &.active {
+    opacity: 1;
+    z-index: 40;
+    visibility: visible;
+    @include screen(laptop) {
+      opacity: 0;
+      z-index: -1;
+      visibility: hidden;
+    }
+  }
+  &__wrapper {
+    padding: 0 0 42px;
+    display: grid;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  &__button {
+    border: 1px solid transparent;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default;
+    padding: 8px 16px;
+    background-color: $green-400;
+    color: $white;
+    border-radius: 100px;
+    @include sans-base;
+    &.active {
+      background-color: $green-300;
+      border-color: $white;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    .header__arrow {
+      width: 24px;
+      height: 24px;
+    }
+    &-lang {
+      .header__icon {
+        width: 18px;
+        height: 18px;
+        svg {
+          min-width: 18px;
+        }
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    overflow-y: auto;
+    max-height: calc(100vh - 170px);
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    @media screen and (orientation: landscape) {
+      max-height: none;
+      overflow: inherit;
+    }
+  }
+  &__years {
+    display: grid;
+    margin-top: 12px;
+  }
+  &__year {
+    max-height: calc(100% - 100px);
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    transition:
+      opacity $transition-default,
+      visibility $transition-default,
+      z-index $transition-default;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+  }
+  &__link {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    span {
+      color: $white;
+      @include sans-lg;
+    }
+  }
+  &__group {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    &__title {
+      color: $green-200;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      @include sans-base-medium;
+    }
+  }
+  &__contacts {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding-right: 10px;
+    @include screen(laptop) {
+      padding-right: 0;
+    }
+  }
+  &__contact {
+    border: 1px solid $white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    justify-content: center;
+    color: $white;
+    span {
+      text-transform: uppercase;
+      @include sans-base-medium;
+    }
+  }
+  &__block {
+    padding-top: 80px;
+    opacity: 0;
+    z-index: -1;
+    position: relative;
+    visibility: hidden;
+    height: 100vh;
+    background-color: $fathom;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    margin-bottom: 80px;
+    transition:
+      opacity $transition-default,
+      z-index $transition-default,
+      visibility $transition-default;
+    @media screen and (orientation: landscape) {
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+    }
+    &[data-id="menu"] {
+      .mob-menu__list {
+        max-height: calc(100vh - 316px);
+        @media screen and (orientation: landscape) {
+          max-height: none;
+          overflow: inherit;
+        }
+      }
+    }
+    &.active {
+      z-index: 2;
+      opacity: 1;
+      visibility: visible;
+    }
+    &-lang {
+      .mob-menu {
+        &__link {
+          justify-content: space-between;
+          width: 100%;
+        }
+        &__item {
+          svg {
+            opacity: 0;
+            right: 20px;
+            z-index: -1;
+            transition:
+              opacity 0.3,
+              visibility $transition-default;
+          }
+          &.active {
+            svg {
+              opacity: 1;
+              z-index: 2;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__heading {
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &__back {
+      position: absolute;
+      left: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__title {
+      color: $white;
+      @include sans-md;
+    }
+  }
+}

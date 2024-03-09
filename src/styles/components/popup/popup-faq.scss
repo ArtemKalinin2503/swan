@@ -1,0 +1,29 @@
+.popup {
+  &.popup-faq {
+    max-width: 100%;
+    height: auto;
+    .popup {
+      &__wrapper {
+        transform: translateX(0) translateY(100%);
+        height: auto;
+      }
+      &__close {
+        display: none;
+        &-mob {
+          display: block;
+        }
+      }
+      &__container {
+        padding: 32px 16px;
+        gap: 12px;
+        height: auto;
+        .faq__link {
+          &.popup__close-mob {
+            position: static;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

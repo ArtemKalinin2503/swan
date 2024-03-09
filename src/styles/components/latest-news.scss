@@ -1,0 +1,15 @@
+.latest-news {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  & > .button {
+    padding: 17px;
+    @include screen(tablet) {
+      padding: 17px 100px;
+    }
+    @include screen(laptop) {
+      margin-top: 20px;
+    }
+  }
+}

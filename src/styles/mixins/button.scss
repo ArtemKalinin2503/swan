@@ -1,0 +1,155 @@
+.button {
+  @include button-border;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default;
+  &__text {
+    transition: color $transition-default;
+    @include sans-base-medium;
+    &-selected {
+      display: none;
+    }
+    &-unselect {
+      display: none;
+    }
+  }
+  &__label {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    position: relative;
+    .button {
+      width: 100%;
+      pointer-events: none;
+    }
+    @include screen(laptop) {
+      &:hover {
+        .button {
+          background-color: transparent;
+          border-color: $untold-400;
+          color: $untold-400;
+        }
+      }
+    }
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &:checked {
+        & + .button .button__text {
+          display: none;
+          &-selected {
+            display: block;
+          }
+        }
+      }
+    }
+    @include screen(laptop) {
+      &:hover {
+        input {
+          &:checked {
+            & + .button .button__text {
+              display: none;
+              &-selected {
+                display: none;
+              }
+              &-unselect {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &-white-transparent {
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+    @include screen(laptop) {
+      &:hover {
+        background-color: $white;
+        color: $fathom;
+      }
+    }
+  }
+  &-green {
+    background-color: $fathom;
+    border: 1px solid transparent;
+    color: $white;
+    @include screen(laptop) {
+      &:hover {
+        background-color: transparent;
+        border-color: $fathom;
+        color: $fathom;
+      }
+    }
+  }
+
+  &-lightgreen {
+    background-color: rgba(146, 199, 208, 0.3);
+    border: 1px solid transparent;
+    color: $fathom;
+    @include screen(laptop) {
+      &:hover {
+        background-color: $fathom;
+        border-color: $fathom;
+        color: $white;
+      }
+    }
+  }
+  &-green-transparent {
+    background-color: transparent;
+    border-color: $fathom;
+    color: $fathom;
+    @include screen(laptop) {
+      &:hover {
+        background-color: $fathom;
+        color: $white;
+      }
+    }
+  }
+  &-brown {
+    background-color: $untold-400;
+    border: 1px solid transparent;
+    color: $white;
+    @include screen(laptop) {
+      &:hover {
+        background-color: transparent;
+        border-color: $untold-400;
+        color: $untold-400;
+      }
+    }
+  }
+  &-brown-transparent {
+    background-color: transparent;
+    border: 1px solid $untold-400;
+    color: $untold-400;
+    @include screen(laptop) {
+      &:hover {
+        background-color: $untold-400;
+        border-color: $untold-400;
+        border: $white;
+      }
+    }
+  }
+  &-no-center {
+    width: auto;
+    left: auto;
+    transform: translate(0);
+  }
+  &-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  &-margin {
+    &-top {
+      margin-top: 40px;
+      @include screen(laptop) {
+        margin-top: 64px;
+      }
+    }
+  }
+}

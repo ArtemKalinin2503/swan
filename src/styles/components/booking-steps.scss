@@ -1,0 +1,77 @@
+.booking-steps {
+  margin-top: 60px;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    position: relative;
+    gap: 20px;
+  }
+  &__title {
+    color: $fathom;
+    display: none;
+    position: absolute;
+    left: 0;
+    white-space: nowrap;
+    @include chap-xs;
+    @include screen(tablet) {
+      display: block;
+      position: static;
+      white-space: normal;
+    }
+  }
+  &__icon {
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 90px;
+    background: rgba(146, 199, 208, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      stroke: $fathom;
+    }
+  }
+  &__block {
+    display: flex;
+    align-items: flex-start;
+    opacity: 0.5;
+    flex-direction: column;
+    @include screen(tablet) {
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @include screen(laptop) {
+      margin-bottom: 0;
+      flex-direction: row;
+    }
+    &:first-child {
+      .booking-steps__icon {
+        svg {
+          fill: $fathom;
+        }
+      }
+    }
+    &.active {
+      opacity: 1;
+      .booking-steps__title {
+        display: block;
+      }
+    }
+  }
+  &__information {
+    margin-top: 36px;
+    min-height: 28px;
+    @include screen(tablet) {
+      margin-top: 0;
+      min-height: auto;
+    }
+  }
+  &__name {
+    display: none;
+    @include sans-base;
+    @include screen(tablet) {
+      display: block;
+    }
+  }
+}
