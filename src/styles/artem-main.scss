@@ -1,1 +1,60 @@
 // Здесь буду писать весь CSS
+
+// Обертка для раздела YOUR SUITE TYPE (которая скрывает элементы в виде представления "Cards"
+.selectedTableView {
+  display: none !important;
+}
+
+// Обертка для раздела YOUR SUITE TYPE (которая показывает элементы в виде представления "Table"
+.suitesTable {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+// Скрываем блок "NUMBER OF GUESTS" если выбран тип представления "Table"
+.hideSuitesNav {
+  display: none;
+}
+
+// Стили для header раздела "YOUR SUITE TYPE" 
+.suitesSectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.suitesSectionHeaderItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.suiteTypeOptionsTitle {
+  color: #343434;
+  font-size: 15px;
+  font-weight: 400;
+  margin-right: 20px;
+}
+
+// Стили для блока настройки показа представления раздела "YOUR SUITE TYPE" 
+.suiteTypeWrapperButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buttonViewTypeCards, .buttonViewTypeTable {
+  background: #deeef0;
+  padding:  8px 20px;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #004155;
+
+  &.activeTypeView {
+    background: #004155;
+    color: #FFFFFF;
+  }
+}
