@@ -1,7 +1,10 @@
+import $ from 'jquery';
+import 'owl.carousel';
+
 // Здесь буду писать весь JS
 const testAddJS = () => {
-	const text = 'Привет!';
-	console.log(text);
+  const text = 'Привет!';
+  console.log(text);
 }
 testAddJS();
 
@@ -39,7 +42,7 @@ const switchButtonViewType = () => {
     for (let i = 0; i < suiteSection.length; i++) {
       suiteSection[i].classList.add('selectedTableView');
     }
-  
+
     // Покажем секцию представления в виде "Таблицы"
     for (let i = 0; i < suitesTable.length; i++) {
       suitesTable[i].classList.add('active');
@@ -51,25 +54,47 @@ const switchButtonViewType = () => {
 }
 switchButtonViewType();
 
-// Инициализация слайдеров (так как разметка будет динамическая приходиться по средством данной функции проставлять необходимые id и атрибуты)
-// для работы слайдеров
+// Инициализация слайдеров (для работы слайдеров раздела "YOUR SUITE TYPE")
 const initCarusels = () => {
-  // Найдем все слайдеры
-  const carusels = document.getElementsByClassName("carousel");
+    // Слайдеры
+    const owlCarousel = document.getElementsByClassName("owl-carousel");
+    // Модальное окно которое показываем по клику на слайд рядом с таблицей раздела "YOUR SUITE TYPE"
+    const modalSliderSuites = document.getElementById("modalSliderSuites").getElementsByTagName("img");
 
-  // Зададим каждому слайдеру id (у каждого слайдера id обязателен)
-  for (let i = 0; i < carusels.length; i++) {
-    carusels[i].setAttribute("id", `${"carouselExampleIndicators" + i}`);
-    // Получим id каждого слайдера
-    const carouselId = carusels[i]?.getAttribute("id");
-    // Получим у каждого слайдера кнопки
-    const buttons = document.getElementById(carouselId).getElementsByTagName("button");
-
-    // Присвоем каждой кнопке в слайдере в атрибут "data-bs-target" - значением id слайдера (так должно быть согласно документации)
-    for (let a = 0; a < buttons.length; a++) {
-      buttons[a].setAttribute("data-bs-target", `${"#" + carouselId}`);
+    // Инициализация всех слайдеров у которых класс "owl-carousel"
+    for (let i = 0; i < owlCarousel.length; i++) {
+      $(owlCarousel[i]).owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+      })
     }
-  }
+
+    // При клике на слайд - подменяем изображения в слайдере который в модальном окне
+    // Это нужно для показа в модальном окне слайдера с более большими изображениями 
+    for (let a = 0; a < owlCarousel.length; a++) {
+      // Клик по слайдеру
+      owlCarousel[a].addEventListener("click", function () {
+        // Получим все изображения слайдера по которому кликнули
+        const images = owlCarousel[a].getElementsByTagName("img");
+
+        for (let b = 0; b < images.length; b++) {
+          // Во всех тегах img -> подменим изображения на такие же как в маленьком слайде
+          modalSliderSuites[b].setAttribute("src", images[b].getAttribute("src"))
+        }
+      });
+    }
 
 }
 initCarusels();
