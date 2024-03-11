@@ -70,11 +70,19 @@
   max-width: 530px;
 }
 
+.suitesTableItemName {
+  font-size: 24px;
+  font-weight: 500;
+  color: #004155;
+}
+
 .suitesTableWrapper {
   width: 100%;
+  margin-top: 20px;
 }
 
 .suitesTable {
+  margin-top: 18px;
   &__nameColumn {
     text-align: center;
     font-size: 15px;
@@ -108,8 +116,17 @@
   }
 }
 
+.lastColumn {
+  text-align: right;
+}
+
 .hotPrice {
   font-size: 15px;
   font-weight: 400;
   color: #EB5757;
+}
+
+// Блок в таблице со Слайдером и описанием
+.suitesTableItemDescription {
+  margin-top: 20px;
 }
