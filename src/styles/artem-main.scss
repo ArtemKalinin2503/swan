@@ -58,3 +58,58 @@
     color: #FFFFFF;
   }
 }
+
+// Стили для блока с таблицей раздела "YOUR SUITE TYPE" 
+.suitesTableSection {
+  display: flex;
+  width: 100%;
+}
+
+.suitesTableItem {
+  width: 100%;
+  max-width: 530px;
+}
+
+.suitesTableWrapper {
+  width: 100%;
+}
+
+.suitesTable {
+  &__nameColumn {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #668D99;
+  }
+  &__columnAnnotation {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #668D99;
+  }
+  &__contentColumn {
+    text-align: center;
+  }
+  &__price {
+    color: #001B23;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  &__priceOld {
+    color: #8C8C8C;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: line-through;
+  }
+  &__type {
+    font-size: 15px;
+    font-weight: 400;
+    color: #001B23;
+  }
+}
+
+.hotPrice {
+  font-size: 15px;
+  font-weight: 400;
+  color: #EB5757;
+}
