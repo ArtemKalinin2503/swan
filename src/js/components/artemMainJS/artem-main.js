@@ -55,46 +55,46 @@ const switchButtonViewType = () => {
 switchButtonViewType();
 
 // Инициализация слайдеров (для работы слайдеров раздела "YOUR SUITE TYPE")
-const initCarusels = () => {
-    // Слайдеры
-    const owlCarousel = document.getElementsByClassName("owl-carousel");
-    // Модальное окно которое показываем по клику на слайд рядом с таблицей раздела "YOUR SUITE TYPE"
-    const modalSliderSuites = document.getElementById("modalSliderSuites").getElementsByTagName("img");
+const initCaruselsSectionSuitesTable = () => {
+  // Слайдеры
+  const owlCarousel = document.getElementsByClassName("owl-carousel");
+  // Модальное окно которое показываем по клику на слайд рядом с таблицей раздела "YOUR SUITE TYPE"
+  const modalSliderSuites = document.getElementById("modalSliderSuites").getElementsByTagName("img");
 
-    // Инициализация всех слайдеров у которых класс "owl-carousel"
-    for (let i = 0; i < owlCarousel.length; i++) {
-      $(owlCarousel[i]).owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
-      })
-    }
+  // Инициализация всех слайдеров у которых класс "owl-carousel"
+  for (let i = 0; i < owlCarousel.length; i++) {
+    $(owlCarousel[i]).owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      lazyLoad:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:1
+          },
+          1000:{
+              items:1
+          }
+      }
+    })
+  }
 
-    // При клике на слайд - подменяем изображения в слайдере который в модальном окне
-    // Это нужно для показа в модальном окне слайдера с более большими изображениями 
-    for (let a = 0; a < owlCarousel.length; a++) {
-      // Клик по слайдеру
-      owlCarousel[a].addEventListener("click", function () {
-        // Получим все изображения слайдера по которому кликнули
-        const images = owlCarousel[a].getElementsByTagName("img");
+  // При клике на слайд - подменяем изображения в слайдере который в модальном окне
+  // Это нужно для показа в модальном окне слайдера с более большими изображениями 
+  for (let a = 0; a < owlCarousel.length; a++) {
+    // Клик по слайдеру
+    owlCarousel[a].addEventListener("click", function () {
+      // Получим все изображения слайдера по которому кликнули
+      const images = owlCarousel[a].getElementsByTagName("img");
 
-        for (let b = 0; b < images.length; b++) {
-          // Во всех тегах img -> подменим изображения на такие же как в маленьком слайде
-          modalSliderSuites[b].setAttribute("src", images[b].getAttribute("src"))
-        }
-      });
-    }
-
+      for (let b = 0; b < images.length; b++) {
+        // Во всех тегах img -> подменим изображения на такие же как в маленьком слайде
+        modalSliderSuites[b].setAttribute("src", images[b].getAttribute("src"))
+      }
+    });
+  }
 }
-initCarusels();
+initCaruselsSectionSuitesTable();
