@@ -284,3 +284,25 @@ span {
   border-radius: 24px;
   margin-top: 10px;
 }
+
+
+// !!!!!!
+.insize{
+  max-width:600px;
+}
+.owl-thumbs{}
+.owl-thumbs .owl-thumb-item{
+  height:150px;
+  width: 100%;
+  max-width:150px;
+  background: transparent;
+  border: none;
+  overflow: hidden;
+}
+.owl-thumbs .owl-thumb-item img{
+  max-width:100%;
+  height:auto;
+}
+
+
+

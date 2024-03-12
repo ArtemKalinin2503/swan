@@ -59,12 +59,13 @@ import "./components/mousemove/card-cursor";
 
 import "./components/date-input.js";
 import "./components/artemMainJS/artem-main.js";
+import "../../node_modules/owl.carousel2.thumbs/dist/owl.carousel2.thumbs.js";
+
 
 import 'normalize.css';
 import '../styles//main.scss';
 import '../styles/artem-main.scss';
 import 'owl.carousel/dist/assets/owl.carousel.css';
-
 import 'bootstrap/dist/css/bootstrap.css';
 
 

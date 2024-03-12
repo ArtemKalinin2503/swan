@@ -62,33 +62,86 @@ const initCaruselsSectionSuitesTable = () => {
   const modalSliderSuites = document.getElementById("modalSliderSuites").getElementsByTagName("img");
 
   // Инициализация всех слайдеров у которых класс "owl-carousel"
-  for (let i = 0; i < owlCarousel.length; i++) {
-    $(owlCarousel[i]).owlCarousel({
+  $(".owl-one").owlCarousel({
+    autoplay: true,
+    rewind: true,
+    margin: 20,
+    responsiveClass: true,
+    autoHeight: true,
+    autoplayTimeout: 7000,
+    smartSpeed: 800,
+    nav: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+  });
+
+  $(".owl-two").owlCarousel({
+    autoplay: true,
+    rewind: true,
+    margin: 20,
+    responsiveClass: true,
+    autoHeight: true,
+    autoplayTimeout: 7000,
+    smartSpeed: 800,
+    nav: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+  });
+
+  $(".owl-three").owlCarousel({
+    autoplay: true,
+    rewind: true,
+    margin: 20,
+    responsiveClass: true,
+    autoHeight: true,
+    autoplayTimeout: 7000,
+    smartSpeed: 800,
+    nav: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+  });
+
+  // Слайдер с превью
+  $(document).ready(function(){
+    $('.owl-four').owlCarousel({
+      items: 1,
+      slideSpeed: 2000,
       autoplay: true,
-      rewind: true, /* use rewind if you don't want loop */
-      margin: 20,
-       /*
-      animateOut: 'fadeOut',
-      animateIn: 'fadeIn',
-      */
-      responsiveClass: true,
-      autoHeight: true,
-      autoplayTimeout: 7000,
-      smartSpeed: 800,
-      nav: true,
-      responsive:{
-          0:{
-              items:1
-          },
-          600:{
-              items:1
-          },
-          1000:{
-              items:1
-          }
-      }
-    })
-  }
+      thumbs: true,
+      thumbImage: true,
+      thumbContainerClass: 'owl-thumbs',
+      thumbItemClass: 'owl-thumb-item',
+      dots: false,
+      nav: false,
+    });
+  });
 
   // При клике на слайд - подменяем изображения в слайдере который в модальном окне
   // Это нужно для показа в модальном окне слайдера с более большими изображениями 
@@ -104,5 +157,8 @@ const initCaruselsSectionSuitesTable = () => {
       }
     });
   }
+  
 }
+
 initCaruselsSectionSuitesTable();
+
