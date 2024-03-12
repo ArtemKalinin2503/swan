@@ -2496,9 +2496,14 @@
                                   <div class="suitesDescriptionText">
                                     <p>
                                       Oceanview staterooms features 2 single beds, bedroom and living room and a luxurious...
-                                      <a href="#" class="suitesDescriptionTextLink">
+                                      <button 
+                                        type="button" 
+                                        class="suitesDescriptionTextLink" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#modalSliderSuiteDescription"
+                                      >
                                         Read more
-                                      </a>
+                                      </button>
                                     </p>
                                   </div>
                                   <button class="buttonBook">
@@ -2638,9 +2643,14 @@
                                   <div class="suitesDescriptionText">
                                     <p>
                                       Oceanview staterooms features 2 single beds, bedroom and living room and a luxurious...
-                                      <a href="#" class="suitesDescriptionTextLink">
-                                        Read more
-                                      </a>
+                                      <button 
+                                      type="button" 
+                                      class="suitesDescriptionTextLink" 
+                                      data-bs-toggle="modal" 
+                                      data-bs-target="#modalSliderSuiteDescription"
+                                    >
+                                      Read more
+                                    </button>
                                     </p>
                                   </div>
                                   <button class="buttonBook">
@@ -2752,6 +2762,50 @@
                         </div>
                       </div>
                   </div>
+
+                  <!-- Модальное окно со слайдером -> "Подробное описание" -->
+                  <div 
+                  class="modal fade" 
+                  id="modalSliderSuiteDescription" 
+                  tabindex="-1" 
+                  aria-labelledby="exampleModalLabel" 
+                  aria-hidden="true"
+                >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <!-- Слайдер для показа более больших изображений -->
+                            <div class="owl-carousel owl-theme">
+                              <div class="item owlCarouselItem">
+                                <img 
+                                  src="#"  
+                                  class="d-block w-100"
+                                  alt="..." 
+                                />
+                              </div>
+                              <div class="item owlCarouselItem">
+                                <img 
+                                  src="#"  
+                                  class="d-block w-100"
+                                  alt="..." 
+                                />
+                              </div>
+                              <div class="item owlCarouselItem">
+                                <img 
+                                  src="#"  
+                                  class="d-block w-100"
+                                  alt="..." 
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer"></div>
+                      </div>
+                    </div>
+                </div>
                </div>
             </div>
          </section>
