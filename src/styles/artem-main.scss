@@ -36,6 +36,7 @@
   font-size: 15px;
   font-weight: 400;
   margin-right: 20px;
+  margin-bottom: 0;
 }
 
 // Стили для блока настройки показа представления раздела "YOUR SUITE TYPE" 
@@ -286,11 +287,15 @@ span {
 }
 
 
-// !!!!!!
+// Для превью в слайдере
 .insize{
   max-width:600px;
 }
-.owl-thumbs{}
+.owl-thumbs{
+  display: flex;
+  gap: 8px;
+}
+
 .owl-thumbs .owl-thumb-item{
   height:150px;
   width: 100%;
@@ -299,6 +304,7 @@ span {
   border: none;
   overflow: hidden;
 }
+
 .owl-thumbs .owl-thumb-item img{
   max-width:100%;
   height:auto;

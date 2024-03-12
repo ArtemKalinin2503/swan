@@ -63,14 +63,14 @@ const initCaruselsSectionSuitesTable = () => {
 
   // Инициализация всех слайдеров у которых класс "owl-carousel"
   $(".owl-one").owlCarousel({
-    autoplay: true,
+    autoplay: false,
     rewind: true,
     margin: 20,
     responsiveClass: true,
     autoHeight: true,
     autoplayTimeout: 7000,
     smartSpeed: 800,
-    nav: true,
+    nav: false,
     responsive:{
         0:{
             items:1
@@ -85,14 +85,14 @@ const initCaruselsSectionSuitesTable = () => {
   });
 
   $(".owl-two").owlCarousel({
-    autoplay: true,
+    autoplay: false,
     rewind: true,
     margin: 20,
     responsiveClass: true,
     autoHeight: true,
     autoplayTimeout: 7000,
     smartSpeed: 800,
-    nav: true,
+    nav: false,
     responsive:{
         0:{
             items:1
@@ -107,14 +107,14 @@ const initCaruselsSectionSuitesTable = () => {
   });
 
   $(".owl-three").owlCarousel({
-    autoplay: true,
+    autoplay: false,
     rewind: true,
     margin: 20,
     responsiveClass: true,
     autoHeight: true,
     autoplayTimeout: 7000,
     smartSpeed: 800,
-    nav: true,
+    nav: false,
     responsive:{
         0:{
             items:1
