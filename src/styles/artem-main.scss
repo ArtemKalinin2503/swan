@@ -63,17 +63,23 @@
 .suitesTableSection {
   display: flex;
   width: 100%;
+  align-items: flex-start;
 }
 
 .suitesTableItem {
   width: 100%;
   max-width: 530px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .suitesTableItemName {
   font-size: 24px;
   font-weight: 500;
   color: #004155;
+  width: 100%;
+  margin: 0;
 }
 
 .suitesTableWrapper {
@@ -88,12 +94,14 @@
     font-size: 15px;
     font-weight: 700;
     color: #668D99;
+    margin: 0;
   }
   &__columnAnnotation {
     text-align: center;
     font-size: 15px;
     font-weight: 700;
     color: #668D99;
+    margin: 0;
   }
   &__contentColumn {
     text-align: center;
@@ -102,12 +110,14 @@
     color: #001B23;
     font-size: 15px;
     font-weight: 400;
+    margin: 0;
   }
   &__priceOld {
     color: #8C8C8C;
     font-size: 13px;
     font-weight: 400;
     text-decoration: line-through;
+    margin: 0;
   }
   &__type {
     font-size: 15px;
@@ -124,17 +134,21 @@
   font-size: 15px;
   font-weight: 400;
   color: #EB5757;
+  margin: 0;
 }
 
 // Блок в таблице со Слайдером и описанием
 .suitesTableItemDescription {
   margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
 }
 
 // Маленький слайдер рядом таблицей
 .sliderSuitesDescription {
   position: relative;
-  width: 250px;
+  width: 235px;
   height: 178px;
 }
 
@@ -196,4 +210,77 @@ span {
 
 .owl-nav button:focus {
     outline: none;
+}
+
+// Блок рядом со слайдером (короткое описание)
+.suitesShortDesctiptionItem {
+  margin-left: 20px;
+  max-width: 250px;
+}
+
+.suitesShortDesctiptionItemName {
+  margin-top: -10px;
+  p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500; 
+  } 
+}
+
+.specifications {
+  display: flex;
+  gap: 28px;
+  margin-top: 0px;
+}
+
+.specificationsItem {
+  display: flex;
+  align-items: center;
+}
+
+.specificationsIcon {
+  width: auto;
+  height: max-content;
+}
+
+.specificationsItemOption {
+  font-size: 14px;
+  font-weight: 500;
+  color: #668D99 !important;
+  margin-top: 5px;
+  margin-left: 4px;
+}
+
+.suitesDescriptionText {
+  margin-top: 8px;
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #343434;
+    margin: 0;
+  }
+}
+
+.suitesDescriptionTextLink {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #e9ac60;
+
+  &:hover {
+    color: #e9ac60;
+  }
+}
+
+.buttonBook {
+  height: 30px;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px 35px;
+  background: #e9ac60;
+  border-radius: 24px;
+  margin-top: 10px;
 }
