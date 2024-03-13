@@ -85,11 +85,14 @@
 
 .suitesTableWrapper {
   width: 100%;
-  margin-top: 20px;
 }
 
 .suitesTable {
   margin-top: 18px;
+  &__column {
+    min-width: 150px;
+    // border: 2px solid red;
+  }
   &__nameColumn {
     position: relative;
     text-align: center;
@@ -97,7 +100,6 @@
     font-weight: 700;
     color: #668D99;
     margin: 0;
-    min-width: 150px;
   }
   &__columnAnnotation {
     text-align: center;
@@ -108,6 +110,7 @@
   }
   &__contentColumn {
     text-align: center;
+    // border: 2px solid green;
   }
   &__price {
     color: #001B23;
@@ -157,7 +160,7 @@
 
 // Блок в таблице со Слайдером и описанием
 .suitesTableItemDescription {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -256,7 +259,8 @@ span {
 // Блок рядом со слайдером (короткое описание)
 .suitesShortDesctiptionItem {
   margin-left: 20px;
-  max-width: 250px;
+  max-width: 240px;
+  padding-right: 10px;
 }
 
 .suitesShortDesctiptionItemName {
