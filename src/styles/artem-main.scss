@@ -419,7 +419,7 @@ span {
 
 .additionalInformationSection {
   border: 2px solid #e9ac60;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex: 55% 45%;
   gap: 24px;
@@ -441,11 +441,13 @@ span {
   color: #001B23;
   font-size: 15px;
   font-weight: 400;
+  margin-top: 8px;
 }
 
 .additionalInformationItemList {
   list-style: disc;
-  padding-left: 0;
+  padding-left: 15px;
+  margin-top: 8px;
 }
 
 .additionalInformationItemListItem {
