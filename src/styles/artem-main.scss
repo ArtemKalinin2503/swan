@@ -391,3 +391,65 @@ span {
   justify-content: center;
   padding: 0px 60px 60px 60px;
 }
+
+// Блок Additional information
+.informationByAdditionalInformation {
+  display: flex;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.informationByAdditionalInformationText {
+  color: #8C8C8C;
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 12px;
+}
+
+.additionalInformationWrapper {
+  margin-top: 44px;
+}
+
+.additionalInformationTitle {
+  color: #001B23;
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.additionalInformationSection {
+  border: 2px solid #e9ac60;
+  padding: 30px;
+  display: flex;
+  flex: 55% 45%;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.additionalInformationItem {
+  max-width: 690px;
+}
+
+.additionalInformationItemTitle {
+  color: #001B23;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.additionalInformationItemText {
+  color: #001B23;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.additionalInformationItemList {
+  list-style: disc;
+  padding-left: 0;
+}
+
+.additionalInformationItemListItem {
+  color: #001B23;
+  font-size: 15px;
+  font-weight: 400;
+}
