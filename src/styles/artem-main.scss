@@ -91,11 +91,13 @@
 .suitesTable {
   margin-top: 18px;
   &__nameColumn {
+    position: relative;
     text-align: center;
     font-size: 15px;
     font-weight: 700;
     color: #668D99;
     margin: 0;
+    min-width: 170px;
   }
   &__columnAnnotation {
     text-align: center;
@@ -127,8 +129,23 @@
   }
 }
 
+.iconInfo {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+
+.iconInfoAdult {
+  right: 20px;
+}
+
 .lastColumn {
+  position: relative;
   text-align: right;
+
+  .iconInfo {
+    right: -25px;
+  }
 }
 
 .hotPrice {
@@ -340,4 +357,33 @@ span {
   .buttonBook {
     display: none;
   }
+}
+
+// Модальное окно Информации
+#suiteModalInfo {
+  .modal-dialog {
+    max-width: 800px !important;
+  }
+  .modal-header, .modal-footer {
+    border: none;
+  }
+}
+
+.suiteModalInfoModalTitle {
+  font-size: 36px;
+  font-weight: 500;
+  color: #004155;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.suiteModalInfoModalTitleModalBody {
+  color: #001B23;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0px 60px 60px 60px;
 }
