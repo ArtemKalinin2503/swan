@@ -455,3 +455,62 @@ span {
   font-size: 15px;
   font-weight: 400;
 }
+
+// Блок Extra services
+.extraServicesWrapper {
+  margin-top: 120px;
+}
+
+.extraServicesTitle {
+  color: #004155;
+  font-size: 80px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.extraServicesFilters {
+  border: 2px solid red;
+}
+
+.extraServicesFilterButton {}
+
+.extraServicesListItem {
+  border: 2px solid violet;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  flex: 380px 380px 380px;
+}
+
+.extraServicesItem {
+  border: 2px solid green;
+  max-width: 380px;
+}
+
+.extraServicesItemImgWrapper {}
+
+.extraServicesItemImg {}
+
+.extraServicesItemName {
+  border: 2px solid gray;
+}
+
+.extraServicesItemDescription {
+  border: 2px solid blue;
+}
+
+.extraServicesItemDescriptionLink {}
+
+.extraServicesItemPriceInfo {}
+
+.extraServicesItemPriceInfoName {}
+
+.extraServicesItemPricePositions {
+  border: 2px solid yellowgreen;
+}
+
+.extraServicesItemPricePositionsItem {}
+
+.extraServicesItemPricePositionName {}
+
+.extraServicesItemPricePositionPrice {}
