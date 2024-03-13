@@ -61,76 +61,41 @@ const initCaruselsSectionSuitesTable = () => {
   // Модальное окно которое показываем по клику на слайд рядом с таблицей раздела "YOUR SUITE TYPE"
   const modalSliderSuites = document.getElementById("modalSliderSuites").getElementsByTagName("img");
 
+  // Модальное окно которое показываем по клику на ссылку Read more
+  const modalSliderSuiteDescription = document.getElementById("modalSliderSuiteDescription");
+  const suitesDescriptionTextLink = document.getElementsByClassName("suitesDescriptionTextLink");
+
   // Инициализация всех слайдеров у которых класс "owl-carousel"
-  $(".owl-one").owlCarousel({
-    autoplay: false,
-    rewind: true,
-    margin: 20,
-    responsiveClass: true,
-    autoHeight: true,
-    autoplayTimeout: 7000,
-    smartSpeed: 800,
-    nav: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
+  for (let i = 0; i < owlCarousel.length; i++) {
+    const isOwlStandart = owlCarousel[i].matches('.owl-standart'); // Проверка на класс чтобы настройки для слайдеров с таким классом были одинаковые
+    if (isOwlStandart) {
+      $(owlCarousel[i]).owlCarousel({
+        autoplay: false,
+        rewind: true,
+        margin: 20,
+        responsiveClass: true,
+        autoHeight: true,
+        autoplayTimeout: 7000,
+        smartSpeed: 800,
+        nav: false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
         }
+      });
     }
-  });
-
-  $(".owl-two").owlCarousel({
-    autoplay: false,
-    rewind: true,
-    margin: 20,
-    responsiveClass: true,
-    autoHeight: true,
-    autoplayTimeout: 7000,
-    smartSpeed: 800,
-    nav: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-  });
-
-  $(".owl-three").owlCarousel({
-    autoplay: false,
-    rewind: true,
-    margin: 20,
-    responsiveClass: true,
-    autoHeight: true,
-    autoplayTimeout: 7000,
-    smartSpeed: 800,
-    nav: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-  });
+  }
 
   // Слайдер с превью
   $(document).ready(function(){
-    $('.owl-four').owlCarousel({
+    $('.owl-block-read-more').owlCarousel({
       items: 1,
       slideSpeed: 2000,
       autoplay: true,
@@ -151,13 +116,43 @@ const initCaruselsSectionSuitesTable = () => {
       // Получим все изображения слайдера по которому кликнули
       const images = owlCarousel[a].getElementsByTagName("img");
 
+      // Во всех тегах img -> подменим изображения на такие же как в маленьком слайде
       for (let b = 0; b < images.length; b++) {
-        // Во всех тегах img -> подменим изображения на такие же как в маленьком слайде
-        modalSliderSuites[b].setAttribute("src", images[b].getAttribute("src"))
+        modalSliderSuites[b].setAttribute("src", images[b].getAttribute("src"));
       }
     });
   }
-  
+
+  // При клике на "Read more"
+  for (let i = 0; i < suitesDescriptionTextLink.length; i++) {
+    suitesDescriptionTextLink[i].addEventListener("click", function () {
+      // Изображения "маленького" слайдера
+      const imagesCarousel = document.getElementsByClassName("owl-carousel-suitesTable")[i].getElementsByTagName("img");
+      // Изображения в модальном окне
+      const imagesInModal = modalSliderSuiteDescription.getElementsByTagName("img");
+
+      // Подменим изображения в слайдере на изображения взятые с "маленького" слайдера
+      for (let a = 0; a < imagesCarousel.length; a++) {
+        imagesInModal[a].setAttribute("src", imagesCarousel[a].getAttribute("src"));
+
+        // Подменим изображения для превью
+        const previewsButtons = document.getElementsByClassName("owl-block-read-more")[0].getElementsByTagName("button");
+        for (let z = 0; z < previewsButtons.length; z++) {
+          previewsButtons[z].getElementsByTagName("img")[0]?.setAttribute("src", imagesCarousel[a].getAttribute("src"));
+        }
+      }
+
+      // Блок с кратким описанием
+      const suitesShortDesctiptionItem = document.getElementsByClassName("suitesShortDesctiptionItem");
+      // Получим разметку блока с кратким описанием
+      const htmlBlockInShortDescription = suitesShortDesctiptionItem[i].innerHTML;
+
+      // Блок с описанием в модальном окне (по клику на "Read more")
+      const modalItemSutesDescription = document.getElementsByClassName("modalItemSutesDescription")[0];
+      // Подменим разметку в данном блоке
+      modalItemSutesDescription.innerHTML = htmlBlockInShortDescription;
+    });
+  }
 }
 
 initCaruselsSectionSuitesTable();

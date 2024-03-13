@@ -213,6 +213,29 @@ span {
     outline: none;
 }
 
+// Для превью в слайдере
+.insize{
+  max-width:600px;
+}
+.owl-thumbs{
+  display: flex;
+  gap: 8px;
+}
+
+.owl-thumbs .owl-thumb-item{
+  height:150px;
+  width: 100%;
+  max-width:150px;
+  background: transparent;
+  border: none;
+  overflow: hidden;
+}
+
+.owl-thumbs .owl-thumb-item img{
+  max-width:100%;
+  height:auto;
+}
+
 // Блок рядом со слайдером (короткое описание)
 .suitesShortDesctiptionItem {
   margin-left: 20px;
@@ -286,29 +309,35 @@ span {
   margin-top: 10px;
 }
 
-
-// Для превью в слайдере
-.insize{
-  max-width:600px;
+// Модальное окно подробное описание при клике на "Read more"
+#modalSliderSuiteDescription {
+  .modal-dialog {
+    max-width: 800px !important;
+  }
+  .modal-header, .modal-footer {
+    border: none;
+  }
 }
-.owl-thumbs{
+
+.modalSliderSuiteDescriptionBody {
   display: flex;
-  gap: 8px;
-}
-
-.owl-thumbs .owl-thumb-item{
-  height:150px;
+  flex-wrap: wrap;
   width: 100%;
-  max-width:150px;
-  background: transparent;
-  border: none;
-  overflow: hidden;
+  .layout {
+    overflow: hidden;
+    max-width: 400px;
+  }
 }
 
-.owl-thumbs .owl-thumb-item img{
-  max-width:100%;
-  height:auto;
+.modalItemSutesDescription {
+  max-width: 340px;
+  margin-left: 20px;
+
+  .suitesDescriptionTextLink {
+    display: none;
+  }
+
+  .buttonBook {
+    display: none;
+  }
 }
-
-
-
