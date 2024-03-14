@@ -559,3 +559,43 @@ span {
   font-size: 32px;
   font-weight: 400;
 }
+
+// Модальное окно подробнее о сервисе "Extra services"
+#extraServicesModalDetailed {
+  .extraServicesItemImgWrapper, .extraServicesItemDescriptionLink {
+    display: none;
+  }
+
+  .modal-dialog {
+    max-width: 800px !important;
+  }
+
+  .modal-header, .modal-footer {
+    border: none;
+  }
+
+  .owl-standart {
+    max-width: 380px;
+  }
+
+  .extraServicesModalDetailedBody {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+
+    .layout {
+      overflow: hidden;
+      max-width: 400px;
+    }
+  }
+
+  .extraServicesModalDetailedDescriptions {
+    max-width: 350px;
+  }
+
+  .extraServicesItemName {
+    margin-top: 0;
+  }
+}

@@ -195,6 +195,8 @@ const sectionSuites = () => {
   // Клик на "Details" в "EXTRA SERVICES"
   const extraServicesItemDescriptionLink = document.getElementsByClassName("extraServicesItemDescriptionLink");
   const extraServicesModalDetailed = document.getElementById("extraServicesModalDetailed");
+  const extraServicesItem = document.getElementsByClassName("extraServicesItem");
+  const extraServicesModalDetailedDescriptions = document.getElementsByClassName("extraServicesModalDetailedDescriptions")[0];
 
   for (let i = 0; i < extraServicesItemDescriptionLink.length; i++) {
     extraServicesItemDescriptionLink[i].addEventListener("click", function () {
@@ -207,6 +209,12 @@ const sectionSuites = () => {
       for (let a = 0; a < images.length; a++) {
         imagesInModal[a].setAttribute("src", images[a].getAttribute("src"));
       }
+
+      // Получим разметку блока с кратким описанием
+      const extraServicesItemHTML = extraServicesItem[i].innerHTML;
+      // Подменим разметку в данном блоке
+      extraServicesModalDetailedDescriptions.innerHTML = extraServicesItemHTML;
+
     });
   };
 
