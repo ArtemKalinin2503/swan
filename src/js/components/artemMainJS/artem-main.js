@@ -192,6 +192,24 @@ const sectionSuites = () => {
     });
   };
 
+  // Клик на "Details" в "EXTRA SERVICES"
+  const extraServicesItemDescriptionLink = document.getElementsByClassName("extraServicesItemDescriptionLink");
+  const extraServicesModalDetailed = document.getElementById("extraServicesModalDetailed");
+
+  for (let i = 0; i < extraServicesItemDescriptionLink.length; i++) {
+    extraServicesItemDescriptionLink[i].addEventListener("click", function () {
+      // Изображения
+      const images = extraServicesItemImgWrapper[i].getElementsByTagName("img");
+      // Изображения в модальном окне
+      const imagesInModal = extraServicesModalDetailed.getElementsByTagName("img");
+
+      // Подменим изображения в слайдере на изображения взятые с блока "EXTRA SERVICES"
+      for (let a = 0; a < images.length; a++) {
+        imagesInModal[a].setAttribute("src", images[a].getAttribute("src"));
+      }
+    });
+  };
+
 }
 sectionSuites();
 
