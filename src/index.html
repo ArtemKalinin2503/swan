@@ -3169,7 +3169,6 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="modal-footer"></div>
                         </div>
                       </div>
                   </div>
@@ -3287,19 +3286,21 @@
                 Extra services
               </div>
               <div class="extraServicesFilters">
-                <button class="extraServicesFilterButton">All</button>
-                <button class="extraServicesFilterButton">Excursions</button>
-                <button class="extraServicesFilterButton">Travel package</button>
-                <button class="extraServicesFilterButton">Onboard</button>
+                <button class="extraServicesFilterButton active" data-value="all">All</button>
+                <button class="extraServicesFilterButton" data-value="excursions">Excursions</button>
+                <button class="extraServicesFilterButton" data-value="travel">Travel package</button>
+                <button class="extraServicesFilterButton" data-value="onboard">Onboard</button>
               </div>
               <!-- Сервис 1 -->
               <div class="extraServicesListItem">
                 <div class="extraServicesItem">
                   <div class="extraServicesItemImgWrapper">
-                    <img 
-                      src="./assets/images/extraServiceUai.png"  
-                      class="extraServicesItemImg" 
-                    />
+                    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#extraServicesModalSlider">
+                      <img 
+                        src="./assets/images/extraServiceUai.png"  
+                        class="extraServicesItemImg" 
+                      />
+                    </button>
                   </div>
                   <div class="extraServicesItemName">
                     Uai package
@@ -3334,15 +3335,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Сервис 2 -->
-              <div class="extraServicesListItem">
+         
+                <!-- Сервис 2 -->
                 <div class="extraServicesItem">
                   <div class="extraServicesItemImgWrapper">
-                    <img 
-                      src="./assets/images/extraServiceDrink.png"  
-                      class="extraServicesItemImg" 
-                    />
+                    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#extraServicesModalSlider">
+                      <img 
+                        src="./assets/images/extraServiceDrink.png"  
+                        class="extraServicesItemImg" 
+                      />
+                    </button>
                   </div>
                   <div class="extraServicesItemName">
                     Drinks package
@@ -3377,15 +3379,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Сервис 3 -->
-              <div class="extraServicesListItem">
+          
+                <!-- Сервис 3 -->
                 <div class="extraServicesItem">
                   <div class="extraServicesItemImgWrapper">
-                    <img 
-                      src="./assets/images/extraServiceKayak.png"  
-                      class="extraServicesItemImg" 
-                    />
+                    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#extraServicesModalSlider">
+                      <img 
+                        src="./assets/images/extraServiceKayak.png"  
+                        class="extraServicesItemImg" 
+                      />
+                    </button>
                   </div>
                   <div class="extraServicesItemName">
                     Kayak package
@@ -3416,6 +3419,25 @@
                       </div>
                       <div class="extraServicesItemPricePositionPrice">
                         € 1.300
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Модальное окно "EXTRA SERVICES" -->
+            <div class="modal fade" id="extraServicesModalSlider" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <!-- Слайдер для показа более больших изображений -->
+                    <div class="owl-carousel owl-theme owl-standart">
+                      <div class="item owlCarouselItem">
+                        <img 
+                          src="#"  
+                          class="d-block w-100"
+                          alt="..." 
+                        />
                       </div>
                     </div>
                   </div>

@@ -54,8 +54,8 @@ const switchButtonViewType = () => {
 }
 switchButtonViewType();
 
-// Инициализация слайдеров (для работы слайдеров раздела "YOUR SUITE TYPE")
-const initCaruselsSectionSuitesTable = () => {
+// Раздел "YOUR SUITE TYPE"
+const sectionSuites = () => {
   // Слайдеры
   const owlCarousel = document.getElementsByClassName("owl-carousel");
   // Модальное окно которое показываем по клику на слайд рядом с таблицей раздела "YOUR SUITE TYPE"
@@ -91,7 +91,7 @@ const initCaruselsSectionSuitesTable = () => {
         }
       });
     }
-  }
+  };
 
   // Слайдер с превью
   $(document).ready(function(){
@@ -121,7 +121,7 @@ const initCaruselsSectionSuitesTable = () => {
         modalSliderSuites[b].setAttribute("src", images[b].getAttribute("src"));
       }
     });
-  }
+  };
 
   // При клике на "Read more"
   for (let i = 0; i < suitesDescriptionTextLink.length; i++) {
@@ -152,8 +152,46 @@ const initCaruselsSectionSuitesTable = () => {
       // Подменим разметку в данном блоке
       modalItemSutesDescription.innerHTML = htmlBlockInShortDescription;
     });
-  }
-}
+  };
 
-initCaruselsSectionSuitesTable();
+  // Выбор фильтра в разделе "EXTRA SERVICES"
+  const extraServicesFiltersButtons = document.getElementsByClassName("extraServicesFilterButton");
+   const clearActives =(classlist) => {
+    if (classlist) {
+      for (let i = 0; i < classlist.length; i++) {
+        classlist[i].classList.remove('active');
+      }
+    }
+  };
+
+  for (let i = 0; i < extraServicesFiltersButtons.length; i++) {
+    extraServicesFiltersButtons[i].addEventListener("click", function () {
+      if (!this.classList.contains('active')) {
+        clearActives(extraServicesFiltersButtons);
+        this.classList.toggle('active');
+        console.log("selected filter: ", this.getAttribute("data-value"))
+      }
+    });
+  };
+
+  // При клике на изображение "EXTRA SERVICES" (вид сервиса)
+  const extraServicesItemImgWrapper = document.getElementsByClassName("extraServicesItemImgWrapper");
+  const extraServicesModalSlider = document.getElementById("extraServicesModalSlider");
+
+  for (let i = 0; i < extraServicesItemImgWrapper.length; i++) {
+    extraServicesItemImgWrapper[i].addEventListener("click", function () {
+      // Изображения
+      const images = extraServicesItemImgWrapper[i].getElementsByTagName("img");
+      // Изображения в модальном окне
+      const imagesInModal = extraServicesModalSlider.getElementsByTagName("img");
+
+      // Подменим изображения в слайдере на изображения взятые с блока "EXTRA SERVICES"
+      for (let a = 0; a < images.length; a++) {
+        imagesInModal[a].setAttribute("src", images[a].getAttribute("src"));
+      }
+    });
+  };
+
+}
+sectionSuites();
 

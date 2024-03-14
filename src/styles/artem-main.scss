@@ -469,21 +469,34 @@ span {
 }
 
 .extraServicesFilters {
-  border: 2px solid red;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 38px;
 }
 
-.extraServicesFilterButton {}
+.extraServicesFilterButton {
+  background: #deeef1;
+  color: #004155;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 20px;
+  border-radius: 100px;
+
+  &.active {
+    background: #004155;
+    color: #FFFFFF;
+  }
+}
 
 .extraServicesListItem {
-  border: 2px solid violet;
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-auto-flow: dense;
   gap: 50px;
-  flex: 380px 380px 380px;
 }
 
 .extraServicesItem {
-  border: 2px solid green;
   max-width: 380px;
 }
 
@@ -492,25 +505,57 @@ span {
 .extraServicesItemImg {}
 
 .extraServicesItemName {
-  border: 2px solid gray;
+  color: #004155;
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 24px;
 }
 
 .extraServicesItemDescription {
-  border: 2px solid blue;
+  font-size: 18px;
+  font-weight: 400;
+  color: #001B23;
+  margin-top: 6px;
 }
 
-.extraServicesItemDescriptionLink {}
+.extraServicesItemDescriptionLink {
+  color: #e9ac60;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
 
-.extraServicesItemPriceInfo {}
+.extraServicesItemPriceInfo {
+  margin-top: 24px;
+  color: #668D99;
+  font-size: 19px;
+  font-weight: 700;
+}
 
 .extraServicesItemPriceInfoName {}
 
 .extraServicesItemPricePositions {
-  border: 2px solid yellowgreen;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-auto-flow: dense;
+  margin-top: 20px;
 }
 
-.extraServicesItemPricePositionsItem {}
+.extraServicesItemPricePositionsItem {
+  min-width: 175px;
+}
 
-.extraServicesItemPricePositionName {}
+.extraServicesItemPricePositionName {
+  color: #668D99;
+  font-size: 18px;
+  font-weight: 400;
+}
 
-.extraServicesItemPricePositionPrice {}
+.extraServicesItemPricePositionPrice {
+  color: #001B23;
+  font-size: 32px;
+  font-weight: 400;
+}
