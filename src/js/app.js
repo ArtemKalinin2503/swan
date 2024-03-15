@@ -61,6 +61,8 @@ import "./components/date-input.js";
 import "./components/artemMainJS/artem-main.js";
 import "../../node_modules/owl.carousel2.thumbs/dist/owl.carousel2.thumbs.js";
 
+import "../../node_modules/bootstrap/dist/js/bootstrap.js";
+
 
 import 'normalize.css';
 import '../styles//main.scss';

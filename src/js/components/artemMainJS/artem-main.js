@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import 'owl.carousel';
+import { IMAGES_SLIDER_SUITES_TYPE } from '../../consts';
 
 // Здесь буду писать весь JS
 const testAddJS = () => {
@@ -69,6 +70,19 @@ const sectionSuites = () => {
   for (let i = 0; i < owlCarousel.length; i++) {
     const isOwlStandart = owlCarousel[i].matches('.owl-standart'); // Проверка на класс чтобы настройки для слайдеров с таким классом были одинаковые
     if (isOwlStandart) {
+
+      // Слайдер с небольшими изображениями в разделе "YOUR SUITE TYPE" (рядом с таблицей)
+      // Динамически исходя из переданного массива создаем слайды
+      IMAGES_SLIDER_SUITES_TYPE?.map((item, index) => {
+        $(owlCarousel[i]).append(`
+          <div class="item owlCarouselItem">
+            <button type="button" class="" data-bs-toggle="modal" data-bs-target="#modalSliderSuites">
+              <img src=${item} class="d-block w-100"/>
+            </button>
+          </div>
+        `);
+      })
+
       $(owlCarousel[i]).owlCarousel({
         autoplay: false,
         rewind: true,
@@ -78,6 +92,7 @@ const sectionSuites = () => {
         autoplayTimeout: 7000,
         smartSpeed: 800,
         nav: false,
+        lazyLoad: true,
         responsive:{
             0:{
                 items:1
