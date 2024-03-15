@@ -171,15 +171,18 @@ const sectionSuites = () => {
         }
       }
 
-      // Блок с кратким описанием
-      const suitesShortDesctiptionItem = document.getElementsByClassName("suitesShortDesctiptionItem");
+      // Блок с полным описанием
+      const suitesFullDesctiptionItem = this.children[0];
+
       // Получим разметку блока с кратким описанием
-      const htmlBlockInShortDescription = suitesShortDesctiptionItem[i].innerHTML;
+      const htmlBlockInShortDescription = suitesFullDesctiptionItem.innerHTML;
 
       // Блок с описанием в модальном окне (по клику на "Read more")
       const modalItemSutesDescription = document.getElementsByClassName("modalItemSutesDescription")[0];
+      
       // Подменим разметку в данном блоке
       modalItemSutesDescription.innerHTML = htmlBlockInShortDescription;
+
     });
   };
 

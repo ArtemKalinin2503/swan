@@ -272,6 +272,24 @@ span {
   } 
 }
 
+// Блок с подробным описанием
+.suitesFullDesctiptionItem {
+  display: none;
+  margin-left: 20px;
+  max-width: 240px;
+  padding-right: 10px;
+}
+
+.suitesFullDesctiptionItemName {
+  display: none;
+  margin-top: -10px;
+  p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500; 
+  } 
+}
+
 .specifications {
   display: flex;
   gap: 28px;
@@ -354,13 +372,10 @@ span {
   max-width: 340px;
   margin-left: 20px;
 
-  .suitesDescriptionTextLink {
-    display: none;
+  .suitesFullDesctiptionItem {
+    display: block; 
   }
 
-  .buttonBook {
-    display: none;
-  }
 }
 
 // Модальное окно Информации
