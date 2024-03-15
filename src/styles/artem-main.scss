@@ -605,6 +605,10 @@ span {
       overflow: hidden;
       max-width: 400px;
     }
+
+    .owl-carousel, .owl-item {
+      max-width: 380px;
+    }
   }
 
   .extraServicesModalDetailedDescriptions {

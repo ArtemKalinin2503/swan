@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import 'owl.carousel';
-import { IMAGES_SLIDER_SUITES_TYPE } from '../../consts';
+import { IMAGES_SLIDER_SUITES_TYPE, IMAGES_EXTRA_SERVICES } from '../../consts';
 
 // Здесь буду писать весь JS
 const testAddJS = () => {
@@ -134,6 +134,17 @@ const sectionSuites = () => {
         nav: false,
       });
     });
+
+    // Слайдер "EXTRA SERVICES" при клике на Details в модальном окне
+    $(document).ready(function(){
+      $('.owl-extra-services-modal').owlCarousel({
+        items: 1,
+        slideSpeed: 2000,
+        dots: true,
+        nav: true,
+      });
+    });
+
   };
 
 
@@ -206,25 +217,21 @@ const sectionSuites = () => {
     });
   };
 
-  // При клике на изображение "EXTRA SERVICES" (вид сервиса)
-  const extraServicesItemImgWrapper = document.getElementsByClassName("extraServicesItemImgWrapper");
-  const extraServicesModalSlider = document.getElementById("extraServicesModalSlider");
-
-  for (let i = 0; i < extraServicesItemImgWrapper.length; i++) {
-    extraServicesItemImgWrapper[i].addEventListener("click", function () {
-      // Изображения
-      const images = extraServicesItemImgWrapper[i].getElementsByTagName("img");
-      // Изображения в модальном окне
-      const imagesInModal = extraServicesModalSlider.getElementsByTagName("img");
-
-      // Подменим изображения в слайдере на изображения взятые с блока "EXTRA SERVICES"
-      for (let a = 0; a < images.length; a++) {
-        imagesInModal[a].setAttribute("src", images[a].getAttribute("src"));
-      }
-    });
-  };
+  // На основании массива изображений генерируются картинки для блоков "EXTRA SERVICES" (вид сервиса)
+  const blockExtraServicesItemImgWrapper = document.getElementsByClassName("extraServicesItemImgWrapper");
+  if (blockExtraServicesItemImgWrapper?.length) {
+    for (let i = 0; i < blockExtraServicesItemImgWrapper.length; i++) {
+      blockExtraServicesItemImgWrapper[i].innerHTML = `
+        <img 
+          src="${IMAGES_EXTRA_SERVICES[i]}"
+          class="extraServicesItemImg" 
+        />
+      `
+    }
+  }
 
   // Клик на "Details" в "EXTRA SERVICES"
+  const extraServicesItemImgWrapper = document.getElementsByClassName("extraServicesItemImgWrapper");
   const extraServicesItemDescriptionLink = document.getElementsByClassName("extraServicesItemDescriptionLink");
   const extraServicesModalDetailed = document.getElementById("extraServicesModalDetailed");
   const extraServicesItem = document.getElementsByClassName("extraServicesItem");
