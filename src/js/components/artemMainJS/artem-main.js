@@ -84,6 +84,7 @@ const sectionSuites = () => {
       })
 
       $(owlCarousel[i]).owlCarousel({
+        items:1,
         autoplay: false,
         rewind: true,
         margin: 20,
@@ -93,17 +94,6 @@ const sectionSuites = () => {
         smartSpeed: 800,
         nav: false,
         lazyLoad: true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
       });
     }
 

@@ -627,3 +627,47 @@ span {
     margin-top: 0;
   }
 }
+
+// Media запросы
+@media screen and (max-width: 1239px) {
+  .suitesSectionWrapper {
+    max-width: 1220px;
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .suitesTableItemDescription {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .suitesShortDesctiptionItem {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .suitesTableItem {
+    max-width: fit-content;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .suitesTableSection {
+    flex-direction: column;
+  }
+
+  .suitesTableItemDescription {
+    flex-direction: row;
+  }
+
+  .suitesShortDesctiptionItem {
+    margin-left: 14px;
+  }
+} 
+
+
+@media screen and (max-width: 780px) {
+  .suitesTableWrapper {
+    display: none;
+  }
+}
