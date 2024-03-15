@@ -512,6 +512,10 @@ span {
   gap: 50px;
 }
 
+.extraServicesItemFullDescription {
+  display: none !important;
+}
+
 .extraServicesItem {
   max-width: 380px;
 }
@@ -578,7 +582,11 @@ span {
 
 // Модальное окно подробнее о сервисе "Extra services"
 #extraServicesModalDetailed {
-  .extraServicesItemImgWrapper, .extraServicesItemDescriptionLink {
+  .extraServicesItemFullDescription{
+    display: block !important;
+  }
+
+  .textDetails {
     display: none;
   }
 
