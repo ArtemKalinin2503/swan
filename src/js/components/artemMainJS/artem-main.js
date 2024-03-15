@@ -69,8 +69,8 @@ const sectionSuites = () => {
   // Инициализация всех слайдеров у которых класс "owl-carousel"
   for (let i = 0; i < owlCarousel.length; i++) {
     const isOwlStandart = owlCarousel[i].matches('.owl-standart'); // Проверка на класс чтобы настройки для слайдеров с таким классом были одинаковые
+   
     if (isOwlStandart) {
-
       // Слайдер с небольшими изображениями в разделе "YOUR SUITE TYPE" (рядом с таблицей)
       // Динамически исходя из переданного массива создаем слайды
       IMAGES_SLIDER_SUITES_TYPE?.map((item, index) => {
@@ -106,22 +106,36 @@ const sectionSuites = () => {
         }
       });
     }
+
+    // Слайдер который показыается в модальное окне при клике на "Read more"
+    // в разделе "YOUR SUITE TYPE" (рядом с таблицей)
+    const isOwlReadMore = owlCarousel[i].matches('.owl-block-read-more');
+
+    if (isOwlReadMore) {
+      IMAGES_SLIDER_SUITES_TYPE?.map((item, index) => {
+        $('.owl-block-read-more').append(`
+          <div class="item owlCarouselItem">
+            <img src=${item} class="d-block w-100"/>
+          </div>
+        `);
+      })
+    }
+    // Слайдер с превью
+    $(document).ready(function(){
+      $('.owl-block-read-more').owlCarousel({
+        items: 1,
+        slideSpeed: 2000,
+        autoplay: true,
+        thumbs: true,
+        thumbImage: true,
+        thumbContainerClass: 'owl-thumbs',
+        thumbItemClass: 'owl-thumb-item',
+        dots: false,
+        nav: false,
+      });
+    });
   };
 
-  // Слайдер с превью
-  $(document).ready(function(){
-    $('.owl-block-read-more').owlCarousel({
-      items: 1,
-      slideSpeed: 2000,
-      autoplay: true,
-      thumbs: true,
-      thumbImage: true,
-      thumbContainerClass: 'owl-thumbs',
-      thumbItemClass: 'owl-thumb-item',
-      dots: false,
-      nav: false,
-    });
-  });
 
   // При клике на слайд - подменяем изображения в слайдере который в модальном окне
   // Это нужно для показа в модальном окне слайдера с более большими изображениями 
