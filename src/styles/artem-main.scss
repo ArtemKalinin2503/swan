@@ -755,6 +755,45 @@ span {
       color: #EB5757;
     }
   }
+
+  // Модальное окно подробное описание при клике на "Read more"
+  .modalSliderSuiteDescriptionBody {
+    display: flex;
+    flex-direction: column;
+
+    .layout {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .modalItemSutesDescription {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  // Модальное окно подробнее о сервисе "Extra services"
+  .extraServicesModalDetailedBody {
+    display: flex;
+    flex-direction: column;
+    
+    .owl-extra-services-modal {
+      width: 100%;
+      max-width: 100% !important;
+    }
+
+    .owl-item  {
+      width: 100%;
+      max-width: 100% !important;
+    }
+
+    .extraServicesModalDetailedDescriptions {
+      width: 100%;
+      max-width: 100% !important;
+      margin-left: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 520px) {
