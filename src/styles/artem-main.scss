@@ -698,6 +698,29 @@ span {
   .suitesTableWrapper {
     display: none;
   }
+  
+  // Блок "YOUR SUITE TYPE" header
+  .suitesSectionHeaderItem {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+
+    .headline__title {
+      font-size: 36px;
+    }
+
+    .suiteTypeOptionsTitle {
+      display: none;
+    }
+
+    .suiteTypeWrapperButtons {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
 
   .suitesTableItemDescription {
     flex-direction: column;
@@ -844,6 +867,11 @@ span {
   // Блок с ценами (только мобильная версия)
   .suitesPriceMobileItem {
     grid-template-columns: minmax(150px, auto) minmax(120px, auto) minmax(120px, auto);
+  }
+
+  // Блок "YOUR SUITE TYPE" header
+  .headline__title {
+    max-width: 200px;
   }
 }
 
