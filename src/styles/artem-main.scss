@@ -861,6 +861,13 @@ span {
       margin-left: 0;
     }
   }
+
+  // Модальное окно информации в таблице раздела "YOUR SUITE TYPE"
+  #suiteModalInfo {
+    .suiteModalInfoModalTitleModalBody {
+      padding: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 520px) {
