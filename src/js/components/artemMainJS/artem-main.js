@@ -94,6 +94,7 @@ const sectionSuites = () => {
         smartSpeed: 800,
         nav: false,
         lazyLoad: true,
+        loop: false,
       });
     }
 
@@ -122,6 +123,7 @@ const sectionSuites = () => {
         thumbItemClass: 'owl-thumb-item',
         dots: false,
         nav: false,
+        loop: false,
       });
     });
 
@@ -132,6 +134,7 @@ const sectionSuites = () => {
         slideSpeed: 2000,
         dots: true,
         nav: true,
+        loop: false,
       });
     });
 

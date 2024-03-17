@@ -628,6 +628,15 @@ span {
   }
 }
 
+// Цены (мобильная версия)
+.suitesPriceMobile {
+  display: none;
+
+  @media screen and (max-width: 780px) {
+    display: block;
+  }
+}
+
 // Media запросы
 @media screen and (max-width: 1239px) {
   .suitesSectionWrapper {
@@ -670,4 +679,94 @@ span {
   .suitesTableWrapper {
     display: none;
   }
+
+  .suitesTableItemDescription {
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .sliderSuitesDescription {
+    width: 100%;
+    height: auto;    
+  }
+
+  .suitesShortDesctiptionItem {
+   margin-left: 0;
+   margin-top: 20px;
+   width: 100%;
+  }
+
+  // Блок с ценами (только мобильная версия)
+  .suitesPriceMobileItem {
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-template-columns: minmax(180px, auto) minmax(150px, auto) minmax(150px, auto);
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D9D9D9;
+  }
+
+  .suitesPriceMobileItem:last-child {
+    border: none;
+  }
+
+  .suitesTypePlacement {
+    margin-bottom: 10px;
+  }
+
+  .suitesPriceMobileColumn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: #668D99;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .suitesPriceMobileColumn:first-child {
+    align-items: flex-start;
+  }
+
+  .suitesPriceMobileColumn:last-child {
+    align-items: flex-end;
+  }
+
+  .iconInfoMoblie {
+    position: absolute;
+    right: 0;
+    top: 6px;
+  }
+
+  .suitesPriceMobile {
+    color: #343434;
+
+    &.oldPrice {
+      text-decoration: line-through;
+      color: #8C8C8C;
+    }
+
+    &.hotPrice {
+      color: #EB5757;
+    }
+  }
 }
+
+@media screen and (max-width: 520px) {
+  // Блок с ценами (только мобильная версия)
+  .suitesPriceMobileItem {
+    grid-template-columns: minmax(150px, auto) minmax(120px, auto) minmax(120px, auto);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  // Блок с ценами (только мобильная версия)
+  .suitesPriceMobileItem {
+    grid-template-columns: minmax(150px, auto) minmax(80px, auto) minmax(80px, auto);
+  }
+} 
