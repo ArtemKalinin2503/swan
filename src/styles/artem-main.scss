@@ -639,7 +639,7 @@ span {
 
 // Media запросы
 @media screen and (max-width: 1239px) {
-  .suitesSectionWrapper {
+  .suitesSectionWrapper, .extraServicesWrapper {
     max-width: 1220px;
   }
 }
@@ -657,6 +657,25 @@ span {
 
   .suitesTableItem {
     max-width: fit-content;
+  }
+
+  // Блок "Extra services"  
+  .extraServicesListItem {
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-template-columns: minmax(180px, auto) minmax(150px, auto) minmax(150px, auto);
+  }
+
+  .extraServicesItemPricePositions {
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-template-columns: minmax(80px, auto) minmax(80px, auto);
+  }
+
+  .extraServicesItemPricePositionsItem {
+    min-width: auto;
   }
 }
 
@@ -756,6 +775,17 @@ span {
     }
   }
 
+  // Блок "Extra services"  
+  .extraServicesListItem {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .extraServicesItem {
+    max-width: 100%;
+    width: 100%;
+  }
+
   // Модальное окно подробное описание при клике на "Read more"
   .modalSliderSuiteDescriptionBody {
     display: flex;
@@ -777,7 +807,7 @@ span {
   .extraServicesModalDetailedBody {
     display: flex;
     flex-direction: column;
-    
+
     .owl-extra-services-modal {
       width: 100%;
       max-width: 100% !important;
