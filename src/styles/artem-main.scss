@@ -639,7 +639,7 @@ span {
 
 // Media запросы
 @media screen and (max-width: 1239px) {
-  .suitesSectionWrapper, .extraServicesWrapper {
+  .suitesSectionWrapper, .extraServicesWrapper, .additionalInformationWrapper, .informationByAdditionalInformation {
     max-width: 1220px;
   }
 }
@@ -775,6 +775,12 @@ span {
     }
   }
 
+  // Additional information         
+  .additionalInformationSection {
+    display: flex;
+    flex-direction: column;
+  }
+
   // Блок "Extra services"  
   .extraServicesListItem {
     display: flex;
@@ -784,6 +790,14 @@ span {
   .extraServicesItem {
     max-width: 100%;
     width: 100%;
+  }
+
+  .extraServicesTitle {
+    font-size: 36px;
+  }
+
+  .extraServicesFilterButton {
+    margin-top: 15px;
   }
 
   // Модальное окно подробное описание при клике на "Read more"
